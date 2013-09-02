@@ -1,5 +1,6 @@
 import com.smsgh.ApiHost;
 import com.smsgh.ApiMessage;
+import com.smsgh.ApiException;
 
 public class Demo {
 	/**
