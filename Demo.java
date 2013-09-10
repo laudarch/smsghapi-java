@@ -8,8 +8,8 @@ public class Demo {
      */
     public static void Main(String[] args) {
         ApiHost apiHost = new ApiHost();
-        apiHost.ClientId = "user123";
-        apiHost.ClientSecret = "secret";
+        apiHost.setClientId("user123");
+        apiHost.setClientSecret("secret");
         
         try {
             /**
