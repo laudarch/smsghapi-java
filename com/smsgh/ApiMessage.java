@@ -18,8 +18,6 @@ public class ApiMessage {
 	private String from;
 	private String id;
 	private String networkId;
-	private boolean premium;
-	private int premiumServiceId;
 	private double rate;
 	private boolean registeredDelivery;
 	private String status;
@@ -69,12 +67,6 @@ public class ApiMessage {
 						break;
 					case "networkid":
 						this.networkId = jsonValue.asString();
-						break;
-					case "premium":
-						this.premium = jsonValue.asBoolean();
-						break;
-					case "premiumserviceid":
-						this.premiumServiceId = jsonValue.asInt();
 						break;
 					case "rate":
 						this.rate = jsonValue.asDouble();
@@ -174,20 +166,6 @@ public class ApiMessage {
 	 */
 	public String getNetworkId() {
 		return this.networkId;
-	}
-	
-	/**
-	 * Gets premium.
-	 */
-	public boolean isPremium() {
-		return this.premium;
-	}
-	
-	/**
-	 * Gets premiumServiceId.
-	 */
-	public int getPremiumServiceId() {
-		return this.premiumServiceId;
 	}
 	
 	/**
@@ -303,22 +281,6 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets premium.
-	 */
-	public ApiMessage setPremium(boolean value) {
-		this.premium = value;
-		return this;
-	}
-	
-	/**
-	 * Sets premiumServiceId.
-	 */
-	public ApiMessage setPremiumServiceId(int value) {
-		this.premiumServiceId = value;
-		return this;
-	}
-	
-	/**
 	 * Sets registeredDelivery.
 	 */
 	public ApiMessage setRegisteredDelivery(boolean value) {
@@ -374,9 +336,6 @@ public class ApiMessage {
 			jsonObject.set("RegisteredDelivery", true);
 		if (this.flashMessage)
 			jsonObject.set("FlashMessage", true);
-		if (this.premium)
-			jsonObject.set("Premium", true)
-				.set("PremiumServiceId", this.premiumServiceId);
 			
 		return jsonObject.toString();
 	}
