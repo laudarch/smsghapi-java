@@ -6,7 +6,7 @@ public class Demo {
     /**
      * Main
      */
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         ApiHost apiHost = new ApiHost();
         apiHost.setClientId("user123");
         apiHost.setClientSecret("secret");

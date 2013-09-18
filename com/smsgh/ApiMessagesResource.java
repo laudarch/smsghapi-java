@@ -34,7 +34,7 @@ public class ApiMessagesResource {
 				new ApiRequest(
 					this.apiHost.getHostname(),
 					this.apiHost.getPort(),
-					this.apiHost.getProtocol(),
+					this.apiHost.isHttps() ? "ssl" : "tcp",
 					this.apiHost.getTimeout(),
 					this.apiHost.getClientId(),
 					this.apiHost.getClientSecret()
@@ -183,7 +183,7 @@ public class ApiMessagesResource {
 			
 		if (apiResponse.getStatus() > 199 && apiResponse.getStatus() < 300) {
 			JsonObject jsonObject = JsonObject.readFrom(apiResponse.getBody());
-			JsonValue jsonValue = jsonObject.get("messages");
+			JsonValue jsonValue = jsonObject.get("Messages");
 			if (jsonValue != null) {
 				for (JsonValue jsonMessage : jsonValue.asArray())
 					apiMessages.add(new ApiMessage(jsonMessage.toString()));

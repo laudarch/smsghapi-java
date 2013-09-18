@@ -1,6 +1,7 @@
 // $Id: ApiMessage.java 222 2013-08-27 10:07:18Z mkwayisi $
 package com.smsgh;
 import java.util.Date;
+import java.util.UUID;
 import java.text.SimpleDateFormat;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
@@ -16,7 +17,7 @@ public class ApiMessage {
 	private String direction;
 	private boolean flashMessage;
 	private String from;
-	private String id;
+	private UUID id;
 	private String networkId;
 	private double rate;
 	private boolean registeredDelivery;
@@ -63,7 +64,22 @@ public class ApiMessage {
 						this.from = jsonValue.asString();
 						break;
 					case "messageid":
-						this.id = jsonValue.asString();
+						String msgId = jsonValue.asString();
+						StringBuilder buf = new StringBuilder();
+						if (msgId.length() == 32) {
+							buf
+								.append(msgId.substring(0, 8))
+								.append('-')
+								.append(msgId.substring(8, 12))
+								.append('-')
+								.append(msgId.substring(12, 16))
+								.append('-')
+								.append(msgId.substring(16, 20))
+								.append('-')
+								.append(msgId.substring(20));
+							msgId = buf.toString();
+						}
+						this.id = UUID.fromString(msgId);
 						break;
 					case "networkid":
 						this.networkId = jsonValue.asString();
@@ -150,14 +166,14 @@ public class ApiMessage {
 	/**
 	 * Gets id.
 	 */
-	public String getId() {
+	public UUID getId() {
 		return this.id;
 	}
 	
 	/**
 	 * Gets id.
 	 */
-	public String getMessageId() {
+	public UUID getMessageId() {
 		return this.id;
 	}
 	
@@ -267,7 +283,7 @@ public class ApiMessage {
 	/**
 	 * Sets id.
 	 */
-	public ApiMessage setId(String value) {
+	public ApiMessage setId(UUID value) {
 		this.id = value;
 		return this;
 	}
@@ -275,7 +291,7 @@ public class ApiMessage {
 	/**
 	 * Sets id.
 	 */
-	public ApiMessage setMessageId(String value) {
+	public ApiMessage setMessageId(UUID value) {
 		this.id = value;
 		return this;
 	}

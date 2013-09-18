@@ -10,7 +10,7 @@ public class ApiHost {
 	private String clientSecret;
 	private String hostname;
 	private int port;
-	private String protocol;
+	private boolean https;
 	private int timeout;
 	private ApiMessagesResource messagesResource;
 	
@@ -20,7 +20,7 @@ public class ApiHost {
 	public ApiHost() {
 		this.hostname = "api.smsgh.com";
 		this.port = 443;
-		this.protocol = "ssl";
+		this.https = true;
 		this.timeout = 15;
 		
 		this.messagesResource = new ApiMessagesResource(this);
@@ -63,10 +63,10 @@ public class ApiHost {
 	}
 	
 	/**
-	 * Gets protocol.
+	 * Gets https.
 	 */
-	public String getProtocol() {
-		return this.protocol;
+	public boolean isHttps() {
+		return this.https;
 	}
 	
 	/**
@@ -118,8 +118,8 @@ public class ApiHost {
 	/**
 	 * Sets protocol.
 	 */
-	public ApiHost setProtocol(String value) {
-		this.protocol = value.toLowerCase();
+	public ApiHost setHttps(boolean value) {
+		this.https = value;
 		return this;
 	}
 	
