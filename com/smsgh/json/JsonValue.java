@@ -16,6 +16,7 @@ import java.io.Serializable;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Date;
 
 
 /**
@@ -359,6 +360,19 @@ public abstract class JsonValue implements Serializable {
    */
   public String asString() {
     throw new UnsupportedOperationException( "Not a string: " + toString() );
+  }
+  
+  /**
+   * Returns this JSON value as a <code>Date</code> value, assuming this
+   * value represents a JSON string. If this is not the case, an
+   * exception is thrown.
+   *
+   * @return this value as <code>Date</code>
+   * @throws UnsupportedOperationException
+   *           if this value is not convertible to <code>Date</code>
+   */
+  public Date asDate() {
+	throw new UnsupportedOperationException("Not a date: " + toString());
   }
 
   /**

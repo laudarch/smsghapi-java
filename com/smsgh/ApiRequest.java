@@ -1,6 +1,4 @@
-/**
- * $Id: ApiRequest.java 225 2013-08-29 11:29:43Z mkwayisi $
- */
+// $Id: ApiRequest.java 225 2013-08-29 11:29:43Z mkwayisi $
 package com.smsgh;
 
 import java.util.ArrayList;
@@ -374,6 +372,7 @@ public class ApiRequest {
 				this.close();
 			}
 			
+			this.close(); // Unfortunately :)
 			return apiResponse;
 		} catch (Exception ex) {
 			throw new ApiException(ex.getMessage());

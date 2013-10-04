@@ -6,14 +6,14 @@ public class SmsghApi {
 	/**
 	 * Data fields.
 	 */
-	private String clientId;
-	private String clientSecret;
-	private String hostname;
-	private int port;
+	private String  clientId;
+	private String  clientSecret;
+	private String  hostname;
+	private int     port;
 	private boolean https;
-	private int timeout;
+	private int     timeout;
 	private ApiMessagesResource messagesResource;
-	private ApiAccountResource accountResource;
+	private ApiAccountResource  accountResource;
 	
 	/**
 	 * Primary constructor.

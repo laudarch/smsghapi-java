@@ -10,6 +10,8 @@
  ******************************************************************************/
 package com.smsgh.json;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.io.IOException;
 
 
@@ -39,7 +41,16 @@ class JsonString extends JsonValue {
   public String asString() {
     return string;
   }
-
+  
+  @Override
+  public Date asDate() {
+	try {
+		return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(string);
+	} catch (Exception ex) {
+		return null;
+	}
+  }
+  
   @Override
   public int hashCode() {
     return string.hashCode();

@@ -94,9 +94,7 @@ public class ApiMessage {
 						this.status = jsonValue.asString();
 						break;
 					case "time":
-						this.time =
-							new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-								.parse(jsonValue.asString());
+						this.time = jsonValue.asDate();
 						break;
 					case "to":
 						this.to = jsonValue.asString();
@@ -108,9 +106,7 @@ public class ApiMessage {
 						this.units = jsonValue.asDouble();
 						break;
 					case "updatetime":
-						this.updateTime = 
-							new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-								.parse(jsonValue.asString());
+						this.updateTime = jsonValue.asDate();
 						break;
 				}
 			}
