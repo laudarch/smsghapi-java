@@ -15,13 +15,13 @@ public class ApiMessagesResource {
 	/**
 	 * Data fields.
 	 */
-	private ApiHost apiHost;
+	private SmsghApi apiHost;
 	private ApiRequest apiRequest;
 	
 	/**
 	 * Primary constructor.
 	 */
-	public ApiMessagesResource(ApiHost apiHost) {
+	public ApiMessagesResource(SmsghApi apiHost) {
 		this.apiHost = apiHost;
 	}
 	

@@ -1,43 +1,18 @@
-import com.smsgh.ApiHost;
-import com.smsgh.ApiMessage;
-import com.smsgh.ApiException;
+import com.smsgh.*;
 
 public class Demo {
     /**
      * Main
      */
     public static void main(String[] args) {
-        ApiHost apiHost = new ApiHost();
-        apiHost.setClientId("user123");
-        apiHost.setClientSecret("secret");
+        SmsghApi smsghApi = new SmsghApi();
+        smsghApi.setClientId("user123");
+        smsghApi.setClientSecret("secret");
+		smsghApi.setHostname("127.0.0.1").setPort(1337);
         
         try {
-            /**
-             * Sending a quick message.
-             */
-            apiHost.getMessagesResource()
-                .send("SMSGH", "+233248183783", "Hello world!");
-                
-            /**
-             * Sending a message with extended properties.
-             */
-            ApiMessage apiMessage = new ApiMessage();
-            apiMessage.setFrom("SMSGH");
-            apiMessage.setTo("+233248183783");
-            apiMessage.setContent("Hello world!");
-            apiMessage.setRegisteredDelivery(true);
-            apiHost.getMessagesResource().send(apiMessage);
-            
-            /**
-             * Scheduling a message.
-             */
-            // ApiMessage
-            apiMessage = new ApiMessage();
-            apiMessage.setFrom("SMSGH");
-            apiMessage.setTo("+233248183783");
-            apiMessage.setContent("Hello world!");
-            apiHost.getMessagesResource()
-                .schedule(apiMessage, new java.util.Date());
+			ApiAccountProfile apiAccountProfile = smsghApi.getAccount().getProfile();
+			System.out.println(apiAccountProfile);
         } catch (ApiException ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
