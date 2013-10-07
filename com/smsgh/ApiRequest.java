@@ -354,7 +354,7 @@ public class ApiRequest {
 			
 			// We had response headers but we were not informed how
 			// to handle the body. The HTTP spec doesn't allow this.
-			else throw new ApiException("Bad response from remote host");
+			// else throw new ApiException("Bad response from remote host");
 			
 			// Determine charset of the response body.
 			int offset;

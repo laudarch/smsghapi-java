@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Date;
 
 import com.smsgh.json.JsonObject.Member;
 
@@ -275,6 +276,11 @@ public class JsonObject extends JsonValue implements Iterable<Member> {
   public JsonObject add( String name, String value ) {
     add( name, valueOf( value ) );
     return this;
+  }
+  
+  public JsonObject add(String name, Date value) {
+	add(name, valueOf(value));
+	return this;
   }
 
   /**

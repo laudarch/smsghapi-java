@@ -1,4 +1,4 @@
-// $Id: SmsghApi.java 225 2013-08-29 11:29:43Z mkwayisi $
+// $Id: SmsghApi.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 
 public class SmsghApi {
@@ -6,14 +6,17 @@ public class SmsghApi {
 	/**
 	 * Data fields.
 	 */
-	private String  clientId;
-	private String  clientSecret;
-	private String  hostname;
-	private int     port;
-	private boolean https;
-	private int     timeout;
-	private ApiMessagesResource messagesResource;
-	private ApiAccountResource  accountResource;
+	private String                   clientId;
+	private String                   clientSecret;
+	private String                   hostname;
+	private int                      port;
+	private boolean                  https;
+	private int                      timeout;
+	private ApiAccountResource       accountResource;
+	private ApiContactsResource      contactsResource;
+	private ApiMessagesResource      messagesResource;
+	private ApiPremiumResource       premiumResource;
+	private ApiBulkMessagingResource bulkMessagingResource;
 	
 	/**
 	 * Primary constructor.
@@ -24,8 +27,11 @@ public class SmsghApi {
 		this.https = true;
 		this.timeout = 15;
 		
-		this.messagesResource = new ApiMessagesResource(this);
 		this.accountResource = new ApiAccountResource(this);
+		this.messagesResource = new ApiMessagesResource(this);
+		this.contactsResource = new ApiContactsResource(this);
+		this.premiumResource = new ApiPremiumResource(this);
+		this.bulkMessagingResource = new ApiBulkMessagingResource(this);
 	}
 	
 	/**
@@ -34,6 +40,41 @@ public class SmsghApi {
 	public SmsghApi(String clientId, String clientSecret) {
 		this.clientId = clientId;
 		this.clientSecret = clientSecret;
+	}
+	
+	/**
+	 * Gets accountResource.
+	 */
+	public ApiAccountResource getAccount() {
+		return this.accountResource;
+	}
+	
+	/**
+	 * Gets messagesResource.
+	 */
+	public ApiMessagesResource getMessagesResource() {
+		return this.messagesResource;
+	}
+	
+	/**
+	 * Gets contactsResource.
+	 */
+	public ApiContactsResource getContacts() {
+		return this.contactsResource;
+	}
+	
+	/**
+	 * Gets premiumResource.
+	 */
+	public ApiPremiumResource getPremium() {
+		return this.premiumResource;
+	}
+	
+	/**
+	 * Gets bulkMessagingResource.
+	 */
+	public ApiBulkMessagingResource getBulkMessaging() {
+		return this.bulkMessagingResource;
 	}
 	
 	/**
@@ -124,19 +165,5 @@ public class SmsghApi {
 	public SmsghApi setTimeout(int value) {
 		this.timeout = value;
 		return this;
-	}
-	
-	/**
-	 * Gets messagesResource.
-	 */
-	public ApiMessagesResource getMessagesResource() {
-		return this.messagesResource;
-	}
-	
-	/**
-	 * Gets accountResource.
-	 */
-	public ApiAccountResource getAccount() {
-		return this.accountResource;
 	}
 }

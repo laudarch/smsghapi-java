@@ -5,6 +5,12 @@ import com.smsgh.json.JsonArray;
 
 public class ApiHelper {
 	/**
+	 * Constructor.
+	 */
+	private ApiHelper() {
+	}
+	
+	/**
 	 * getData
 	 */
 	public static String getData
@@ -48,10 +54,21 @@ public class ApiHelper {
 	public static <T> ApiList<T> getApiList
 		(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize)
 		throws ApiException {
-		if (page > 0)
-			uri += "?Page=" + page;
+		return getApiList(clazz, apiHost, uri, page, pageSize, false);
+	}
+	
+	/**
+	 * getApiList
+	 */
+	public static <T> ApiList<T> getApiList
+		(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize, boolean hasQ)
+		throws ApiException {
+		if (page > 0) {
+			uri += (hasQ ? "&" : "?") + "Page=" + page;
+			if (!hasQ) hasQ = true;
+		}
 		if (pageSize > 0)
-			uri += (page > 0 ? "&" : "?") + "PageSize=" + pageSize;
+			uri += (hasQ ? "&" : "?") + "PageSize=" + pageSize;
 		try {
 			return new ApiList<T>(getJson(apiHost, "GET", uri, null));
 		} catch (Exception ex) {

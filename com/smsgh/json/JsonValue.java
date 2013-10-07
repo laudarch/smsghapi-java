@@ -17,6 +17,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 
 /**
@@ -176,6 +177,19 @@ public abstract class JsonValue implements Serializable {
    */
   public static JsonValue valueOf( boolean value ) {
     return value ? TRUE : FALSE;
+  }
+  
+  /**
+   * Returns a JsonValue instance that represents the given
+   * <code>Date</code> value.
+   *
+   * @param value
+   *          the value to get a JSON representation for
+   * @return a JSON value that represents the given value
+   */
+  public static JsonValue valueOf(Date value) {
+    return value == null ? NULL : new JsonString
+	    (new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(value));
   }
 
   /**

@@ -138,4 +138,38 @@ public class ApiAccountResource {
 			throw new ApiException(ex.getMessage());
 		}
 	}
+	
+	/**
+	 * Gets all child accounts.
+	 */
+	public ApiList<ApiChildAccount> getChildAccounts()
+		throws ApiException {
+		return getChildAccounts(-1, -1);
+	}
+	
+	/**
+	 * Gets child accounts by page and pageSize.
+	 */
+	public ApiList<ApiChildAccount> getChildAccounts(int page, int pageSize)
+		throws ApiException {
+		return ApiHelper.getApiList
+			(ApiChildAccount.class, this.smsghApi, "/v3/account/childaccounts", page, pageSize);
+	}
+	
+	/**
+	 * Gets all account invoices.
+	 */
+	public ApiList<ApiInvoice> getInvoices()
+		throws ApiException {
+		return getInvoices(-1, -1);
+	}
+	
+	/**
+	 * Gets account invoices by page and pageSize.
+	 */
+	public ApiList<ApiInvoice> getInvoices(int page, int pageSize)
+		throws ApiException {
+		return ApiHelper.getApiList(ApiInvoice.class,
+			this.smsghApi, "/v3/account/invoices", page, pageSize);
+	}
 }
