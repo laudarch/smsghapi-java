@@ -1,9 +1,9 @@
-// $Id: ApiMoKeyword.java 0 1970-01-01 00:00:00Z mkwayisi $
+// $Id: ApiMoKeyWord.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
-public class ApiMoKeyword {
+public class ApiMoKeyWord {
 	/**
 	 * Data fields.
 	 */
@@ -21,13 +21,13 @@ public class ApiMoKeyword {
 	/**
 	 * Primary constructor.
 	 */
-	public ApiMoKeyword() {
+	public ApiMoKeyWord() {
 	}
 	
 	/**
 	 * Constructor from JSON.
 	 */
-	public ApiMoKeyword(JsonObject json) {
+	public ApiMoKeyWord(JsonObject json) {
 		JsonValue val;
 		for (String name : json.names()) {
 			val = json.get(name);
@@ -139,7 +139,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets alias1.
 	 */
-	public ApiMoKeyword setAlias1(String value) {
+	public ApiMoKeyWord setAlias1(String value) {
 		this.alias1 = value;
 		return this;
 	}
@@ -147,7 +147,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets alias2.
 	 */
-	public ApiMoKeyword setAlias2(String value) {
+	public ApiMoKeyWord setAlias2(String value) {
 		this.alias2 = value;
 		return this;
 	}
@@ -155,7 +155,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets alias3.
 	 */
-	public ApiMoKeyword setAlias3(String value) {
+	public ApiMoKeyWord setAlias3(String value) {
 		this.alias3 = value;
 		return this;
 	}
@@ -163,7 +163,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets alias4.
 	 */
-	public ApiMoKeyword setAlias4(String value) {
+	public ApiMoKeyWord setAlias4(String value) {
 		this.alias4 = value;
 		return this;
 	}
@@ -171,7 +171,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets alias5.
 	 */
-	public ApiMoKeyword setAlias5(String value) {
+	public ApiMoKeyWord setAlias5(String value) {
 		this.alias5 = value;
 		return this;
 	}
@@ -179,7 +179,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets isActive.
 	 */
-	public ApiMoKeyword setActive(boolean value) {
+	public ApiMoKeyWord setActive(boolean value) {
 		this.isActive = value;
 		return this;
 	}
@@ -187,7 +187,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets isDefault.
 	 */
-	public ApiMoKeyword setDefault(boolean value) {
+	public ApiMoKeyWord setDefault(boolean value) {
 		this.isDefault = value;
 		return this;
 	}
@@ -195,7 +195,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets keyword.
 	 */
-	public ApiMoKeyword setKeyword(String value) {
+	public ApiMoKeyWord setKeyword(String value) {
 		this.keyword = value;
 		return this;
 	}
@@ -203,7 +203,7 @@ public class ApiMoKeyword {
 	/**
 	 * Sets numberPlanId.
 	 */
-	public ApiMoKeyword setNumberPlanId(long value) {
+	public ApiMoKeyWord setNumberPlanId(long value) {
 		this.numberPlanId = value;
 		return this;
 	}

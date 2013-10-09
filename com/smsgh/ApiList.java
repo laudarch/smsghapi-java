@@ -68,7 +68,7 @@ public class ApiList<T> implements Iterable<T> {
 					
 				case "mokeywordlist":
 					for (JsonValue o : val.asArray())
-						this.items.add((T) new ApiMoKeyword(o.asObject()));
+						this.items.add((T) new ApiMoKeyWord(o.asObject()));
 					break;
 					
 				case "numberplanlist":

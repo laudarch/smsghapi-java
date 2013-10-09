@@ -69,17 +69,17 @@ public class ApiPremiumResource {
 	/**
 	 * Gets all keywords for a number plan.
 	 */
-	public ApiList<ApiMoKeyword> getNumberPlanKeywords
+	public ApiList<ApiMoKeyWord> getNumberPlanKeywords
 		(long numberPlanId) throws ApiException {
-		return getNumberPlanKeywords(numberPlanId, -1, -1);
+		return getNumberPlanKeyWords(numberPlanId, -1, -1);
 	}
 	
 	/**
 	 * Gets keywords for a number plan by page and pageSize.
 	 */
-	public ApiList<ApiMoKeyword> getNumberPlanKeywords
+	public ApiList<ApiMoKeyWord> getNumberPlanKeyWords
 		(long numberPlanId, int page, int pageSize) throws ApiException {
-		return ApiHelper.getApiList(ApiMoKeyword.class, this.apiHost,
+		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost,
 			"/v3/numberplans/" + numberPlanId + "/keywords", page, pageSize);
 	}
 	
@@ -156,30 +156,30 @@ public class ApiPremiumResource {
 	/**
 	 * Gets all keywords.
 	 */
-	public ApiList<ApiMoKeyword> getKeywords
+	public ApiList<ApiMoKeyWord> getKeyWords
 		() throws ApiException {
-		return getKeywords(-1, -1);
+		return getKeyWords(-1, -1);
 	}
 	
 	/**
 	 * Gets keywords by page and pageSize.
 	 */
-	public ApiList<ApiMoKeyword> getKeywords
+	public ApiList<ApiMoKeyWord> getKeyWords
 		(int page, int pageSize) throws ApiException {
-		return ApiHelper.getApiList(ApiMoKeyword.class,
+		return ApiHelper.getApiList(ApiMoKeyWord.class,
 			this.apiHost, "/v3/keywords", page, pageSize);
 	}
 	
 	/**
 	 * Creates new keyword.
 	 */
-	public ApiMoKeyword create
-		(ApiMoKeyword apiMoKeyword) throws ApiException {
+	public ApiMoKeyWord create
+		(ApiMoKeyWord apiMoKeyWord) throws ApiException {
 		try {
-			if (apiMoKeyword == null)
-				throw new NullPointerException("apiMoKeyword");
-			return new ApiMoKeyword(ApiHelper.getJson(this.apiHost,
-				"POST", "/v3/keywords", apiMoKeyword.toJson()));
+			if (apiMoKeyWord == null)
+				throw new NullPointerException("apiMoKeyWord");
+			return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost,
+				"POST", "/v3/keywords", apiMoKeyWord.toJson()));
 		} catch (Exception ex) {
 			throw new ApiException(ex.getMessage());
 		}
@@ -188,14 +188,14 @@ public class ApiPremiumResource {
 	/**
 	 * Updates a keyword.
 	 */
-	public ApiMoKeyword update
-		(ApiMoKeyword apiMoKeyword) throws ApiException {
+	public ApiMoKeyWord update
+		(ApiMoKeyWord apiMoKeyWord) throws ApiException {
 		try {
-			if (apiMoKeyword == null)
-				throw new NullPointerException("apiMoKeyword");
-			return new ApiMoKeyword(ApiHelper.getJson(this.apiHost,
-				"PUT", "/v3/keywords/" + apiMoKeyword.getId(),
-					apiMoKeyword.toJson()));
+			if (apiMoKeyWord == null)
+				throw new NullPointerException("apiMoKeyWord");
+			return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost,
+				"PUT", "/v3/keywords/" + apiMoKeyWord.getId(),
+					apiMoKeyWord.toJson()));
 		} catch (Exception ex) {
 			throw new ApiException(ex.getMessage());
 		}

@@ -19,7 +19,7 @@ public class ApiCampaign {
 	private String             description;
 	private boolean            enabled;
 	private boolean            isDefault;
-	private List<ApiMoKeyword> moKeywords;
+	private List<ApiMoKeyWord> moKeyWords;
 	private boolean            pendingApproval;
 	
 	/**
@@ -34,7 +34,7 @@ public class ApiCampaign {
 	public ApiCampaign(JsonObject json) {
 		JsonValue val;
 		this.actions = new ArrayList<ApiAction>();
-		this.moKeywords = new ArrayList<ApiMoKeyword>();
+		this.moKeyWords = new ArrayList<ApiMoKeyWord>();
 		
 		for (String name : json.names()) {
 			val = json.get(name);
@@ -69,7 +69,7 @@ public class ApiCampaign {
 					break;
 				case "mokeywords":
 					for (JsonValue v : val.asArray())
-						this.moKeywords.add(new ApiMoKeyword(v.asObject()));
+						this.moKeyWords.add(new ApiMoKeyWord(v.asObject()));
 					break;
 				case "pendingapproval":
 					this.pendingApproval = val.asBoolean();
@@ -144,8 +144,8 @@ public class ApiCampaign {
 	/**
 	 * Gets moKeywords.
 	 */
-	public List<ApiMoKeyword> getMoKeywords() {
-		return this.moKeywords;
+	public List<ApiMoKeyWord> getMoKeyWords() {
+		return this.moKeyWords;
 	}
 	
 	/**

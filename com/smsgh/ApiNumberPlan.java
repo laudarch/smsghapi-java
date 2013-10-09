@@ -21,7 +21,7 @@ public class ApiNumberPlan {
 	private boolean                 isActive;
 	private boolean                 isPremium;
 	private int                     maxAllowedKeywords;
-	private List<ApiMoKeyword>      moKeywords;
+	private List<ApiMoKeyWord>      moKeyWords;
 	private String                  notes;
 	private List<ApiNumberPlanItem> numberPlanItems;
 	private double                  periodicCostBasis;
@@ -32,7 +32,7 @@ public class ApiNumberPlan {
 	 */
 	public ApiNumberPlan(JsonObject json) {
 		JsonValue val;
-		this.moKeywords = new ArrayList<ApiMoKeyword>();
+		this.moKeyWords = new ArrayList<ApiMoKeyWord>();
 		this.numberPlanItems = new ArrayList<ApiNumberPlanItem>();
 		for (String name : json.names()) {
 			val = json.get(name);
@@ -72,7 +72,7 @@ public class ApiNumberPlan {
 					break;
 				case "mokeywords":
 					for (JsonValue o : val.asArray())
-						this.moKeywords.add(new ApiMoKeyword(o.asObject()));
+						this.moKeyWords.add(new ApiMoKeyWord(o.asObject()));
 					break;
 				case "notes":
 					this.notes = val.asString();
@@ -172,8 +172,8 @@ public class ApiNumberPlan {
 	/**
 	 * Gets moKeywords.
 	 */
-	public List<ApiMoKeyword> getMoKeywords() {
-		return this.moKeywords;
+	public List<ApiMoKeyWord> getMoKeyWords() {
+		return this.moKeyWords;
 	}
 	
 	/**
