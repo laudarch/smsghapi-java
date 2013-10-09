@@ -8,11 +8,10 @@ public class Demo {
         SmsghApi smsghApi = new SmsghApi();
         smsghApi.setClientId("user123");
         smsghApi.setClientSecret("secret");
-		smsghApi.setHostname("127.0.0.1").setPort(1337);
         
         try {
 			ApiAccountProfile apiAccountProfile = smsghApi.getAccount().getProfile();
-			System.out.println(apiAccountProfile);
+			// Do something with apiAccountProfile.
         } catch (ApiException ex) {
             System.out.println("Exception: " + ex.getMessage());
         }

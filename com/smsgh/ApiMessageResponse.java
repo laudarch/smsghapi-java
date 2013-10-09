@@ -1,4 +1,4 @@
-// $Id: ApiMessageResponse.java 222 2013-08-27 10:07:18Z mkwayisi $
+// $Id: ApiMessageResponse.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
@@ -8,40 +8,40 @@ public class ApiMessageResponse {
 	/**
 	 * Data fields.
 	 */
-	private int status;
-	private String messageId;
-	private double rate;
-	private String networkId;
 	private String clientReference;
 	private String detail;
+	private String messageId;
+	private String networkId;
+	private int    status;
+	private double rate;
 	
 	/**
 	 * Primary constructor.
 	 */
 	public ApiMessageResponse(String response) throws ApiException {
 		try {
-			JsonValue jsonValue;
+			JsonValue val;
 			JsonObject jsonObject = JsonObject.readFrom(response);
 			for (String name : jsonObject.names()) {
-				jsonValue = jsonObject.get(name);
+				val = jsonObject.get(name);
 				switch (name.toLowerCase()) {
 					case "status":
-						this.status = jsonValue.asInt();
+						this.status = val.asInt();
 						break;
 					case "messageid":
-						this.messageId = jsonValue.asString();
+						this.messageId = val.asString();
 						break;
 					case "rate":
-						this.rate = jsonValue.asDouble();
+						this.rate = val.asDouble();
 						break;
 					case "networkid":
-						this.networkId = jsonValue.asString();
+						this.networkId = val.asString();
 						break;
 					case "clientreference":
-						this.clientReference = jsonValue.asString();
+						this.clientReference = val.asString();
 						break;
 					case "detail":
-						this.detail = jsonValue.asString();
+						this.detail = val.asString();
 						break;
 				}
 			}
