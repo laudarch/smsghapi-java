@@ -7,26 +7,25 @@ import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
 public class ApiMessage {
-	
 	/**
 	 * Data fields.
 	 */
-	private int apiMessageType = -1;
-	private String clientReference;
-	private String content;
-	private String direction;
+	private int     apiMessageType = -1;
+	private String  clientReference;
+	private String  content;
+	private String  direction;
 	private boolean flashMessage;
-	private String from;
-	private UUID id;
-	private String networkId;
-	private double rate;
+	private String  from;
+	private UUID    messageId;
+	private String  networkId;
+	private double  rate;
 	private boolean registeredDelivery;
-	private String status;
-	private Date time;
-	private String to;
-	private String udh;
-	private double units;
-	private Date updateTime;
+	private String  status;
+	private Date    time;
+	private String  to;
+	private String  udh;
+	private double  units;
+	private Date    updateTime;
 	
 	/**
 	 * Primary constructor.
@@ -38,82 +37,60 @@ public class ApiMessage {
 	/**
 	 * Constructor to parse Json.
 	 */
-	public ApiMessage(String data) throws ApiException {
-		try {
-			JsonValue jsonValue;
-			JsonObject jsonObject = JsonObject.readFrom(data);
-			for (String name : jsonObject.names()) {
-				jsonValue = jsonObject.get(name);
-				switch (name.toLowerCase()) {
-					case "apimessagetype":
-						this.apiMessageType = jsonValue.asInt();
-						break;
-					case "clientreference":
-						this.clientReference = jsonValue.asString();
-						break;
-					case "content":
-						this.content = jsonValue.asString();
-						break;
-					case "direction":
-						this.content = jsonValue.asString();
-						break;
-					case "flashmessage":
-						this.flashMessage = jsonValue.asBoolean();
-						break;
-					case "from":
-						this.from = jsonValue.asString();
-						break;
-					case "messageid":
-						String msgId = jsonValue.asString();
-						StringBuilder buf = new StringBuilder();
-						if (msgId.length() == 32) {
-							buf
-								.append(msgId.substring(0, 8))
-								.append('-')
-								.append(msgId.substring(8, 12))
-								.append('-')
-								.append(msgId.substring(12, 16))
-								.append('-')
-								.append(msgId.substring(16, 20))
-								.append('-')
-								.append(msgId.substring(20));
-							msgId = buf.toString();
-						}
-						this.id = UUID.fromString(msgId);
-						break;
-					case "networkid":
-						this.networkId = jsonValue.asString();
-						break;
-					case "rate":
-						this.rate = jsonValue.asDouble();
-						break;
-					case "registereddelivery":
-						this.registeredDelivery = jsonValue.asBoolean();
-						break;
-					case "status":
-						this.status = jsonValue.asString();
-						break;
-					case "time":
-						this.time = jsonValue.asDate();
-						break;
-					case "to":
-						this.to = jsonValue.asString();
-						break;
-					case "udh":
-						this.udh = jsonValue.asString();
-						break;
-					case "units":
-						this.units = jsonValue.asDouble();
-						break;
-					case "updatetime":
-						this.updateTime = jsonValue.asDate();
-						break;
-				}
+	public ApiMessage(JsonObject json) {
+		JsonValue val;
+		for (String name : json.names()) {
+			val = json.get(name);
+			switch (name.toLowerCase()) {
+				case "apimessagetype":
+					this.apiMessageType = val.asInt();
+					break;
+				case "clientreference":
+					this.clientReference = val.asString();
+					break;
+				case "content":
+					this.content = val.asString();
+					break;
+				case "direction":
+					this.content = val.asString();
+					break;
+				case "flashmessage":
+					this.flashMessage = val.asBoolean();
+					break;
+				case "from":
+					this.from = val.asString();
+					break;
+				case "messageid":
+					this.messageId = val.asUUID();
+					break;
+				case "networkid":
+					this.networkId = val.asString();
+					break;
+				case "rate":
+					this.rate = val.asDouble();
+					break;
+				case "registereddelivery":
+					this.registeredDelivery = val.asBoolean();
+					break;
+				case "status":
+					this.status = val.asString();
+					break;
+				case "time":
+					this.time = val.asDate();
+					break;
+				case "to":
+					this.to = val.asString();
+					break;
+				case "udh":
+					this.udh = val.asString();
+					break;
+				case "units":
+					this.units = val.asDouble();
+					break;
+				case "updatetime":
+					this.updateTime = val.asDate();
+					break;
 			}
-		} catch (Exception ex) {
-			throw new ApiException(
-				"Could not construct ApiMessage instance from response: "
-					+ ex);
 		}
 	}
 	
@@ -148,7 +125,7 @@ public class ApiMessage {
 	/**
 	 * Gets flashMessage.
 	 */
-	public boolean isFlashMessage() {
+	public boolean getFlashMessage() {
 		return this.flashMessage;
 	}
 	
@@ -160,17 +137,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Gets id.
-	 */
-	public UUID getId() {
-		return this.id;
-	}
-	
-	/**
-	 * Gets id.
+	 * Gets messageId.
 	 */
 	public UUID getMessageId() {
-		return this.id;
+		return this.messageId;
 	}
 	
 	/**
@@ -188,9 +158,9 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Gets registeredDelivery
+	 * Gets registeredDelivery.
 	 */
-	public boolean isRegisteredDelivery() {
+	public boolean getRegisteredDelivery() {
 		return this.registeredDelivery;
 	}
 	
@@ -277,22 +247,6 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets id.
-	 */
-	public ApiMessage setId(UUID value) {
-		this.id = value;
-		return this;
-	}
-	
-	/**
-	 * Sets id.
-	 */
-	public ApiMessage setMessageId(UUID value) {
-		this.id = value;
-		return this;
-	}
-	
-	/**
 	 * Sets registeredDelivery.
 	 */
 	public ApiMessage setRegisteredDelivery(boolean value) {
@@ -325,30 +279,19 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Returns this message as serialized.
+	 * toJson
 	 */
-	public String serialize() {
-		JsonObject jsonObject = new JsonObject()
-			.set("From", this.from)
-			.set("To", this.to)
-			.set("Content", this.content);
-			
-		if (this.apiMessageType >= 0)
-			jsonObject.set("ApiMessageType", this.apiMessageType);
-		if (this.udh != null)
-			jsonObject.set("Udh", this.udh);
-		if (this.time != null) {
-			jsonObject.set("Time",
-				new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-					.format(this.time));
-		}
-		if (this.clientReference != null)
-			jsonObject.set("ClientReference", this.clientReference);
-		if (this.registeredDelivery)
-			jsonObject.set("RegisteredDelivery", true);
-		if (this.flashMessage)
-			jsonObject.set("FlashMessage", true);
-			
-		return jsonObject.toString();
+	public String toJson() {
+		return new JsonObject()
+			.add("ApiMessageType", this.apiMessageType)
+			.add("ClientReference", this.clientReference)
+			.add("Content", this.content)
+			.add("FlashMessage", this.flashMessage)
+			.add("From", this.from)
+			.add("RegisteredDelivery", this.registeredDelivery)
+			.add("Time", this.time)
+			.add("To", this.to)
+			.add("Udh", this.udh)
+			.toString();
 	}
 }

@@ -229,8 +229,8 @@ public class ApiRequest {
 		
 		// Set the Content-Length header if data is being sent.
 		if (body == null) {
-			if (this.removeHeader("content-length"))
-				this.removeHeader("content-type");
+			this.removeHeader("content-length");
+			this.removeHeader("content-type");
 		} else this.setHeader("content-length", body.length() + "");
 		
 		// Start buffering the request data.

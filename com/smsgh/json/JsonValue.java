@@ -17,6 +17,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Date;
+import java.util.UUID;
 import java.text.SimpleDateFormat;
 
 
@@ -387,6 +388,19 @@ public abstract class JsonValue implements Serializable {
    */
   public Date asDate() {
 	throw new UnsupportedOperationException("Not a date: " + toString());
+  }
+  
+  /**
+   * Returns this JSON value as a <code>UUID</code> value, assuming this
+   * value represents a JSON string. If this is not the case, an
+   * exception is thrown.
+   *
+   * @return this value as <code>UUID</code>
+   * @throws UnsupportedOperationException
+   *           if this value is not convertible to <code>UUID</code>
+   */
+  public UUID asUUID() {
+	throw new UnsupportedOperationException("Not a UUID: " + toString());
   }
 
   /**

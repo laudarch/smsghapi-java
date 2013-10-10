@@ -52,7 +52,7 @@ public class SmsghApi {
 	/**
 	 * Gets messagesResource.
 	 */
-	public ApiMessagesResource getMessagesResource() {
+	public ApiMessagesResource getMessages() {
 		return this.messagesResource;
 	}
 	

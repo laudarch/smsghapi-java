@@ -22,7 +22,8 @@ public class ApiHelper {
 					apiHost.getClientId(), apiHost.getClientSecret())
 			.setMethod(method)
 			.setUri(uri)
-			.setHeader("accept", "application/json")
+			.setHeader("Accept", "application/json")
+			.setHeader("Content-Type", "application/json")
 			.send(data);
 		if (apiResponse.getStatus() > 199 && apiResponse.getStatus() < 300)
 			return apiResponse.getBody();

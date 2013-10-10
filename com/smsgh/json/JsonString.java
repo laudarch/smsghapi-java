@@ -11,6 +11,7 @@
 package com.smsgh.json;
 
 import java.util.Date;
+import java.util.UUID;
 import java.text.SimpleDateFormat;
 import java.io.IOException;
 
@@ -49,6 +50,26 @@ class JsonString extends JsonValue {
 	} catch (Exception ex) {
 		return null;
 	}
+  }
+  
+  @Override
+  public UUID asUUID() {
+	String s = string;
+	StringBuilder buf = new StringBuilder();
+	if (s.length() == 32) {
+		buf
+			.append(s.substring(0, 8))
+			.append('-')
+			.append(s.substring(8, 12))
+			.append('-')
+			.append(s.substring(12, 16))
+			.append('-')
+			.append(s.substring(16, 20))
+			.append('-')
+			.append(s.substring(20));
+		s = buf.toString();
+	}
+	return UUID.fromString(s);
   }
   
   @Override
