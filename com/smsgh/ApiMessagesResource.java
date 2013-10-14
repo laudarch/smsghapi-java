@@ -6,18 +6,29 @@ import java.text.SimpleDateFormat;
 import java.net.URLEncoder;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API messages resource.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiMessagesResource {
 	private SmsghApi apiHost;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiMessagesResource(SmsghApi apiHost) {
 		this.apiHost = apiHost;
 	}
 	
 	/**
-	 * Sends a quick message.
+	 * Sends a quick SMS message.
+	 *
+	 * @param  from    sender address of the message.
+	 * @param  to      recipient phone number of the message.
+	 * @param  content content of the message.
+	 * @return instance of ApiMessageResponse.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessageResponse send
 		(String from, String to, String content) throws ApiException {
@@ -27,7 +38,11 @@ public class ApiMessagesResource {
 	}
 	
 	/**
-	 * Sends a message.
+	 * Sends an API message.
+	 *
+	 * @param  apiMessage  the API message to send.
+	 * @return instance of ApiMessageResponse.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessageResponse send
 		(ApiMessage apiMessage) throws ApiException {
@@ -43,6 +58,11 @@ public class ApiMessagesResource {
 	
 	/**
 	 * Schedules a message.
+	 *
+	 * @param  apiMessage  the API message to schedule.
+	 * @param  time        date and time to send the message.
+	 * @return instance of ApiMessageResponse.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessageResponse schedule
 		(ApiMessage apiMessage, Date time) throws ApiException {
@@ -52,7 +72,12 @@ public class ApiMessagesResource {
 	}
 	
 	/**
-	 * Reschedules a message by ID and time.
+	 * Rescheduled a scheduled message.
+	 *
+	 * @param  messageId  ID of the scheduled message.
+	 * @param  time       new date and time to send the message.
+	 * @return instance of ApiMessageResponse.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessageResponse reschedule
 		(UUID messageId, Date time) throws ApiException {
@@ -71,7 +96,11 @@ public class ApiMessagesResource {
 	}
 	
 	/**
-	 * Cancels scheduled message by ID.
+	 * Cancels a scheduled message.
+	 *
+	 * @param  messageId  ID of the scheduled message.
+	 * @return instance of ApiMessageResponse.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessageResponse cancel
 		(UUID messageId) throws ApiException {
@@ -87,7 +116,11 @@ public class ApiMessagesResource {
 	}
 	
 	/**
-	 * Gets message by ID.
+	 * Retrieves details of a message.
+	 *
+	 * @param  messageId  ID of the API message.
+	 * @return instance of ApiMessage representing the API message.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMessage get
 		(UUID messageId) throws ApiException {
@@ -102,7 +135,16 @@ public class ApiMessagesResource {
 	}
 	
 	/**
-	 * Gets messages by several params.
+	 * Retrieves messages by several parameters.
+	 *
+	 * @param  start     the date to start querying from.
+	 * @param  end       the last possible time in the query.
+	 * @param  index     the number of results to skip from the result set.
+	 * @param  limit     the maximum number of results to return.
+	 * @param  pending   indicates if only scheduled messages should be returned.
+	 * @param  direction an in or out value used to filter.
+	 * @return API list of API messages.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMessage> get
 		(Date start, Date end, int index, int limit, boolean pending,

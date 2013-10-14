@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API service type.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiServiceType {
-	/**
-	 * Data fields.
-	 */
 	private String  descriptor;
 	private boolean isCreditBased;
 	private boolean isPrepaid;
@@ -15,7 +17,9 @@ public class ApiServiceType {
 	private boolean requiresActivation;
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiServiceType(JsonObject json) {
 		JsonValue val;
@@ -45,42 +49,54 @@ public class ApiServiceType {
 	}
 	
 	/**
-	 * Gets descriptor.
+	 * Gets the descriptor of this API service type.
+	 *
+	 * @return the descriptor.
 	 */
 	public String getDescriptor() {
 		return this.descriptor;
 	}
 	
 	/**
-	 * Gets isCreditBased.
+	 * Indicates whether this API service type is credit based.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isCreditBased() {
 		return this.isCreditBased;
 	}
 	
 	/**
-	 * Gets isPrepaid.
+	 * Indicates whether this API service type is prepaid.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isPrepaid() {
 		return this.isPrepaid;
 	}
 	
 	/**
-	 * Gets name.
+	 * Gets the name of this API service type.
+	 *
+	 * @return the name.
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
 	/**
-	 * Gets rate.
+	 * Gets the rate of this API service type.
+	 *
+	 * @return the rate.
 	 */
 	public double getRate() {
 		return this.rate;
 	}
 	
 	/**
-	 * Gets requiresActivation.
+	 * Indicates whether this API service type requires activation.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean getRequiresActivation() {
 		return this.requiresActivation;

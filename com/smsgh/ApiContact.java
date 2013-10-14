@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API contact.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiContact {
-	/**
-	 * Data fields.
-	 */
 	private long   contactId;
 	private String custom1;
 	private String custom2;
@@ -20,13 +22,15 @@ public class ApiContact {
 	private String title;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiContact() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiContact(JsonObject json) {
 		JsonValue val;
@@ -71,84 +75,109 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Gets contactId.
+	 * Gets the ID of this API contact.
+	 *
+	 * @return the ID.
 	 */
 	public long getContactId() {
 		return this.contactId;
 	}
 	
 	/**
-	 * Gets custom1.
+	 * Gets the custom 1 of this API contact.
+	 *
+	 * @return the custom 1.
 	 */
 	public String getCustom1() {
 		return this.custom1;
 	}
 	
 	/**
-	 * Gets custom2.
+	 * Gets the custom 2 of this API contact.
+	 *
+	 * @return the custom 2.
 	 */
 	public String getCustom2() {
 		return this.custom2;
 	}
 	
 	/**
-	 * Gets custom3.
+	 * Gets the custom 3 of this API contact.
+	 *
+	 * @return the custom 3.
 	 */
 	public String getCustom3() {
 		return this.custom3;
 	}
 	
 	/**
-	 * Gets firstName.
+	 * Gets the first name of this API contact.
+	 *
+	 * @return the first name.
 	 */
 	public String getFirstName() {
 		return this.firstName;
 	}
 	
 	/**
-	 * Gets groupId.
+	 * Gets the group ID of this API contact.
+	 *
+	 * @return the group ID.
 	 */
 	public long getGroupId() {
 		return this.groupId;
 	}
 	
 	/**
-	 * Gets groupName.
+	 * Gets the group name of this API contact.
+	 *
+	 * @return the group name.
 	 */
 	public String getGroupName() {
 		return this.groupName;
 	}
 	
 	/**
-	 * Gets mobileNumber.
+	 * Gets the mobile number of this API contact.
+	 *
+	 * @return the mobile number.
 	 */
 	public String getMobileNumber() {
 		return this.mobileNumber;
 	}
 	
 	/**
-	 * Gets owner.
+	 * Gets the owner of this API contact.
+	 *
+	 * @return the owner.
 	 */
 	public String getOwner() {
 		return this.owner;
 	}
 	
 	/**
-	 * Gets surname.
+	 * Gets the surname of this API contact.
+	 *
+	 * @return the surname.
 	 */
 	public String getSurname() {
 		return this.surname;
 	}
 	
 	/**
-	 * Gets title.
+	 * Gets the title of this API contact.
+	 *
+	 * @return the title.
 	 */
 	public String getTitle() {
 		return this.title;
 	}
 	
 	/**
-	 * Sets custom1.
+	 * Sets the custom 1 of this API contact.
+	 *
+	 * @param value  the custom 1.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setCustom1(String value) {
 		this.custom1 = value;
@@ -156,7 +185,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets custom2.
+	 * Sets the custom 2 of this API contact.
+	 *
+	 * @param value  the custom 2.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setCustom2(String value) {
 		this.custom2 = value;
@@ -164,7 +196,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets custom3.
+	 * Sets the custom 3 of this API contact.
+	 *
+	 * @param value  the custom 3.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setCustom3(String value) {
 		this.custom3 = value;
@@ -172,7 +207,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets firstName.
+	 * Sets the first name of this API contact.
+	 *
+	 * @param value  the first name.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setFirstName(String value) {
 		this.firstName = value;
@@ -180,7 +218,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets groupId.
+	 * Sets the group ID of this API contact.
+	 *
+	 * @param value  the group ID.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setGroupId(long value) {
 		this.groupId = value;
@@ -188,7 +229,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets mobileNumber.
+	 * Sets the mobile number of this API contact.
+	 *
+	 * @param value  the mobile number.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setMobileNumber(String value) {
 		this.mobileNumber = value;
@@ -196,7 +240,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets surname.
+	 * Sets the surname of this API contact.
+	 *
+	 * @param value  the surname.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setSurname(String value) {
 		this.surname = value;
@@ -204,7 +251,10 @@ public class ApiContact {
 	}
 	
 	/**
-	 * Sets title.
+	 * Sets the title of this API contact.
+	 *
+	 * @param value  the title.
+	 * @return this instance of API contact.
 	 */
 	public ApiContact setTitle(String value) {
 		this.title = value;

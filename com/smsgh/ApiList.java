@@ -6,16 +6,20 @@ import java.util.Iterator;
 import com.smsgh.json.JsonObject;
 import com.smsgh.json.JsonValue;
 
+/**
+ * Represents an API list.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiList<T> implements Iterable<T> {
-	/**
-	 * Data fields.
-	 */
 	private long count;
 	private long totalPages;
 	private List<T> items;
 	
 	/**
-	 * Primary constructor.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	@SuppressWarnings("unchecked")
 	public ApiList(JsonObject json) {
@@ -90,21 +94,27 @@ public class ApiList<T> implements Iterable<T> {
 	}
 	
 	/**
-	 * Gets count.
+	 * Gets the count of this API list.
+	 *
+	 * @return the count.
 	 */
 	public long getCount() {
 		return this.count;
 	}
 	
 	/**
-	 * Gets totalPages.
+	 * Gets the total pages of this API list.
+	 *
+	 * @return the total pages.
 	 */
 	public long getTotalPages() {
 		return this.totalPages;
 	}
 	
 	/**
-	 * Gets items.
+	 * Gets the items in this API list.
+	 *
+	 * @return the items.
 	 */
 	public List<T> getItems() {
 		return this.items;

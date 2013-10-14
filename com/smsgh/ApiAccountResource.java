@@ -4,23 +4,31 @@ import java.util.List;
 import java.util.ArrayList;
 import com.smsgh.json.JsonValue;
 
+/**
+ * Represents an API account resource.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiAccountResource {
-	/**
-	 * Data fields.
-	 */
 	private SmsghApi smsghApi;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of the ApiAccountResource class.
+	 *
+	 * @param  smsghApi  an SMSGH API host.
 	 */
 	public ApiAccountResource(SmsghApi smsghApi) {
 		this.smsghApi = smsghApi;
 	}
 	
 	/**
-	 * Gets account profile.
+	 * Retrieves account profile.
+	 *
+	 * @return the API account profile.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiAccountProfile getProfile() throws ApiException {
+	public ApiAccountProfile getProfile()
+		throws ApiException {
 		try {
 			return new ApiAccountProfile(ApiHelper.getJson
 				(this.smsghApi, "GET", "/v3/account/profile", null));
@@ -30,9 +38,13 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets primary contact.
+	 * Retrieves primary contact.
+	 *
+	 * @return an API account contact.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiAccountContact getPrimaryContact() throws ApiException {
+	public ApiAccountContact getPrimaryContact()
+		throws ApiException {
 		try {
 			return new ApiAccountContact(ApiHelper.getJson
 				(this.smsghApi, "GET", "/v3/account/primary_contact", null));
@@ -42,9 +54,13 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets billing contact.
+	 * Retrieves billing contact.
+	 *
+	 * @return an API account contact.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiAccountContact getBillingContact() throws ApiException {
+	public ApiAccountContact getBillingContact()
+		throws ApiException {
 		try {
 			return new ApiAccountContact(ApiHelper.getJson
 				(this.smsghApi, "GET", "/v3/account/billing_contact", null));
@@ -54,9 +70,13 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets technical contact.
+	 * Retrieves technical contact.
+	 *
+	 * @return an API account contact.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiAccountContact getTechnicalContact() throws ApiException {
+	public ApiAccountContact getTechnicalContact()
+		throws ApiException {
 		try {
 			return new ApiAccountContact(ApiHelper.getJson
 				(this.smsghApi, "GET", "/v3/account/technical_contact", null));
@@ -66,7 +86,10 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets all account contacts.
+	 * Retrieves all account contacts.
+	 *
+	 * @return a list of API account contacts.
+	 * @throws ApiException if an error occurs.
 	 */
 	public List<ApiAccountContact> getContacts() throws ApiException {
 		List<ApiAccountContact> aacs = new ArrayList<ApiAccountContact>(3);
@@ -81,7 +104,10 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Updates account contact.
+	 * Updates an API account contact.
+	 *
+	 * @param  apiAccountContact the account contact to update.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void update(ApiAccountContact apiAccountContact)
 		throws ApiException {
@@ -96,14 +122,23 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets all account services.
+	 * Retrieves all account services.
+	 *
+	 * @return an API list of API services.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiList<ApiService> getServices() throws ApiException {
+	public ApiList<ApiService> getServices()
+		throws ApiException {
 		return getServices(-1, -1);
 	}
 	
 	/**
-	 * Gets account services by page and pageSize.
+	 * Retrieves account services by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return an API list of API services.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiService> getServices(int page, int pageSize)
 		throws ApiException {
@@ -112,7 +147,10 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets account settings.
+	 * Retrieves account settings.
+	 *
+	 * @return API account settings.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiSettings getSettings()
 		throws ApiException {
@@ -125,7 +163,11 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Updates account settings.
+	 * Updates an API account settings.
+	 *
+	 * @param  apiSettings  the API account settings to update.
+	 * @return API account settings.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiSettings update(ApiSettings apiSettings)
 		throws ApiException {
@@ -140,7 +182,10 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets all child accounts.
+	 * Retrieves all API child accounts.
+	 *
+	 * @return an API list of API child account.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiChildAccount> getChildAccounts()
 		throws ApiException {
@@ -148,16 +193,24 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets child accounts by page and pageSize.
+	 * Retrieves API child accounts by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return an API list of API child accounts.
+	 * @throws ApiException if an error occurs.
 	 */
-	public ApiList<ApiChildAccount> getChildAccounts(int page, int pageSize)
-		throws ApiException {
-		return ApiHelper.getApiList
-			(ApiChildAccount.class, this.smsghApi, "/v3/account/childaccounts", page, pageSize);
+	public ApiList<ApiChildAccount> getChildAccounts
+		(int page, int pageSize) throws ApiException {
+		return ApiHelper.getApiList(ApiChildAccount.class,
+			this.smsghApi, "/v3/account/childaccounts", page, pageSize);
 	}
 	
 	/**
-	 * Gets all account invoices.
+	 * Retrieves all API account invoices.
+	 *
+	 * @return an API list of API invoices.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiInvoice> getInvoices()
 		throws ApiException {
@@ -165,7 +218,12 @@ public class ApiAccountResource {
 	}
 	
 	/**
-	 * Gets account invoices by page and pageSize.
+	 * Retrieves account invoices by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return an API list of account invoices.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiInvoice> getInvoices(int page, int pageSize)
 		throws ApiException {

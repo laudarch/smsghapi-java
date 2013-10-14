@@ -5,10 +5,12 @@ import java.text.SimpleDateFormat;
 import com.smsgh.json.JsonObject;
 import com.smsgh.json.JsonValue;
 
+/**
+ * Represents an API account profile.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiAccountProfile {
-	/**
-	 * Data fields.
-	 */
 	private String accountId;
 	private String accountManager;
 	private long   accountNumber;
@@ -24,7 +26,9 @@ public class ApiAccountProfile {
 	private double unpostedBalance;
 	
 	/**
-	 * Constructor from JSON.
+	 * Initializes the data fields of this class from JSON.
+	 *
+	 * @param  json  a guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiAccountProfile(JsonObject json)
 	{
@@ -75,91 +79,117 @@ public class ApiAccountProfile {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API account profile.
+	 *
+	 * @return the account ID or zero if not set.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets accountManager.
+	 * Gets the account manager of this API account profile.
+	 *
+	 * @return the account manager or null if not set.
 	 */
 	public String getAccountManager() {
 		return this.accountManager;
 	}
 	
 	/**
-	 * Gets accountNumber.
+	 * Gets the account number of this API account profile.
+	 *
+	 * @return the account number or zero if not set.
 	 */
 	public long getAccountNumber() {
 		return this.accountNumber;
 	}
 	
 	/**
-	 * Gets accountStatus.
+	 * Gets the account status of this API account profile.
+	 *
+	 * @return the account status or null if not set.
 	 */
 	public String getAccountStatus() {
 		return this.accountStatus;
 	}
 	
 	/**
-	 * Gets balance.
+	 * Gets the balance of this API account profile.
+	 *
+	 * @return the balance or zero if not set.
 	 */
 	public double getBalance() {
 		return this.balance;
 	}
 	
 	/**
-	 * Gets company.
+	 * Gets the company of this API account profile.
+	 *
+	 * @return the company or null if not set.
 	 */
 	public String getCompany() {
 		return this.company;
 	}
 	
 	/**
-	 * Gets credit.
+	 * Gets the credit of this API account profile.
+	 *
+	 * @return the credit or zero if not set.
 	 */
 	public double getCredit() {
 		return this.credit;
 	}
 	
 	/**
-	 * Gets emailAddress.
+	 * Gets the email address of this API account profile.
+	 *
+	 * @return the email address or null if not set.
 	 */
 	public String getEmailAddress() {
 		return this.emailAddress;
 	}
 	
 	/**
-	 * Gets lastAccessed.
+	 * Gets the last accessed date of this API account profile.
+	 *
+	 * @return the last accessed date or null if not set.
 	 */
 	public Date getLastAccessed() {
 		return this.lastAccessed;
 	}
 	
 	/**
-	 * Gets mobileNumber.
+	 * Gets the mobile number of this API account profile.
+	 *
+	 * @return the mobile number or null if not set.
 	 */
 	public String getMobileNumber() {
 		return this.mobileNumber;
 	}
 	
 	/**
-	 * Gets numberOfServices.
+	 * Gets the number of services on this API account profile.
+	 *
+	 * @return the number of services or zero if not set.
 	 */
 	public int getNumberOfServices() {
 		return this.numberOfServices;
 	}
 	
 	/**
-	 * Gets primaryContact.
+	 * Gets the primary contact of this API account profile.
+	 *
+	 * @return the primary contact or null if not set.
 	 */
 	public String getPrimaryContact() {
 		return this.primaryContact;
 	}
 	
 	/**
-	 * Gets unpostedBalance.
+	 * Gets the unposted balance of this API account profile.
+	 *
+	 * @return the unposted balance or zero if not set.
 	 */
 	public double getUnpostedBalance() {
 		return this.unpostedBalance;

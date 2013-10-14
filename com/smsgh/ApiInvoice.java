@@ -4,10 +4,12 @@ import java.util.Date;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API invoice.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiInvoice {
-	/**
-	 * Data fields.
-	 */
 	private double  amount;
 	private Date    created;
 	private String  description;
@@ -18,7 +20,9 @@ public class ApiInvoice {
 	private String  type;
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiInvoice(JsonObject json) {
 		JsonValue val;
@@ -53,56 +57,72 @@ public class ApiInvoice {
 	}
 	
 	/**
-	 * Gets amount.
+	 * Gets the amount of this API invoice.
+	 *
+	 * @return the amount.
 	 */
 	public double getAmount() {
 		return this.amount;
 	}
 	
 	/**
-	 * Gets created.
+	 * Gets the created date of this API invoice.
+	 *
+	 * @return the created date.
 	 */
 	public Date getCreated() {
 		return this.created;
 	}
 	
 	/**
-	 * Gets description.
+	 * Gets the description of this API invoice.
+	 *
+	 * @return the description.
 	 */
 	public String getDescription() {
 		return this.description;
 	}
 	
 	/**
-	 * Gets dueDate.
+	 * Gets the due date of this API invoice.
+	 *
+	 * @return the due date.
 	 */
 	public Date getDueDate() {
 		return this.dueDate;
 	}
 	
 	/**
-	 * Gets ending.
+	 * Gets the ending of this API invoice.
+	 *
+	 * @return the ending.
 	 */
 	public double getEnding() {
 		return this.ending;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API invoice.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets isPaid.
+	 * Indicates whether this API invoice is paid.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isPaid() {
 		return this.isPaid;
 	}
 	
 	/**
-	 * Gets type.
+	 * Gets the type of this API invoice.
+	 *
+	 * @return the type.
 	 */
 	public String getType() {
 		return this.type;

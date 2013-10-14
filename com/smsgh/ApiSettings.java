@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API settings.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiSettings {
-	/**
-	 * Data fields.
-	 */
 	private String  accountId;
 	private String  countryCode;
 	private String  deliveryReportNotificationUrl;
@@ -22,7 +24,7 @@ public class ApiSettings {
 	private String  timeZone;
 	
 	/**
-	 * Primary constructor.
+	 * Used internally to initialize the data fields of this instance.
 	 */
 	public ApiSettings(JsonObject json) {
 		JsonValue val;
@@ -73,91 +75,117 @@ public class ApiSettings {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API settings.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets countryCode.
+	 * Gets the country code of this API settings.
+	 *
+	 * @return the country code.
 	 */
 	public String getCountryCode() {
 		return this.countryCode;
 	}
 	
 	/**
-	 * Gets deliveryReportNotificationUrl.
+	 * Gets the delivery report notification URL of this API settings.
+	 *
+	 * @return the delivery report notification URL.
 	 */
 	public String getDeliveryReportNotificationUrl() {
 		return this.deliveryReportNotificationUrl;
 	}
 	
 	/**
-	 * Gets emailDailySummary.
+	 * Gets the email daily summary state of this API settings.
+	 *
+	 * @return the email daily summary state.
 	 */
 	public boolean getEmailDailySummary() {
 		return this.emailDailySummary;
 	}
 	
 	/**
-	 * Gets emailInvoiceReminders.
+	 * Gets the email invoice reminders state of this API settings.
+	 *
+	 * @return the email invoice reminders state.
 	 */
 	public boolean getEmailInvoiceReminders() {
 		return this.emailInvoiceReminders;
 	}
 	
 	/**
-	 * Gets emailMaintenance.
+	 * Gets the email maintenance state of this API settings.
+	 *
+	 * @return the email maintenance state.
 	 */
 	public boolean getEmailMaintenance() {
 		return this.emailMaintenance;
 	}
 	
 	/**
-	 * Gets emailNewInvoice.
+	 * Gets the email new invoice state of this API settings.
+	 *
+	 * @return the email new invoice state.
 	 */
 	public boolean getEmailNewInvoice() {
 		return this.emailNewInvoice;
 	}
 	
 	/**
-	 * Gets smsFortnightBalance.
+	 * Gets the SMS fornight balance state of this API settings.
+	 *
+	 * @return the SMS fornight balance state.
 	 */
 	public boolean getSmsFortnightBalance() {
 		return this.smsFortnightBalance;
 	}
 	
 	/**
-	 * Gets smsLowBalanceNotification.
+	 * Gets the SMS low balance notification state of this API settings.
+	 *
+	 * @return the SMS low balance notification state.
 	 */
 	public boolean getSmsLowBalanceNotification() {
 		return this.smsLowBalanceNotification;
 	}
 	
 	/**
-	 * Gets smsMaintenance.
+	 * Gets the SMS maintenance state of this API settings.
+	 *
+	 * @return the SMS maintenance state.
 	 */
 	public boolean getSmsMaintenance() {
 		return this.smsMaintenance;
 	}
 	
 	/**
-	 * Gets smsPromotionalMessages.
+	 * Gets the SMS promotional messages state of this API settings.
+	 *
+	 * @return the SMS promotional messages state.
 	 */
 	public boolean getSmsPromotionalMessages() {
 		return this.smsPromotionalMessages;
 	}
 	
 	/**
-	 * Gets smsTopUpNotification.
+	 * Gets the SMS topup notification state of this API settings.
+	 *
+	 * @return the SMS topup notification state.
 	 */
 	public boolean getSmsTopUpNotification() {
 		return this.smsTopUpNotification;
 	}
 	
 	/**
-	 * Gets timeZone.
+	 * Gets the time zone of this API settings.
+	 *
+	 * @return the time zone.
 	 */
 	public String getTimeZone() {
 		return this.timeZone;

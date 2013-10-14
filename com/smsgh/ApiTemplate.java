@@ -4,10 +4,12 @@ import java.util.Date;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API message template.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiTemplate {
-	/**
-	 * Data fields.
-	 */
 	private String accountId;
 	private Date   dateCreated;
 	private long   id;
@@ -15,13 +17,15 @@ public class ApiTemplate {
 	private String text;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiTemplate() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiTemplate(JsonObject json) {
 		JsonValue val;
@@ -48,42 +52,55 @@ public class ApiTemplate {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API message template.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets dateCreated.
+	 * Gets the created date of this API message template.
+	 *
+	 * @return the created date.
 	 */
 	public Date getDateCreated() {
 		return this.dateCreated;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API message template.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets name.
+	 * Gets the name of this API message template.
+	 *
+	 * @return the name.
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
 	/**
-	 * Gets text.
+	 * Gets the text of this API message template.
+	 *
+	 * @return the text.
 	 */
 	public String getText() {
 		return this.text;
 	}
 	
 	/**
-	 * Sets name.
+	 * Sets the name of this API message template.
+	 *
+	 * @param value the name.
+	 * @return this instance of API message template.
 	 */
 	public ApiTemplate setName(String value) {
 		this.name = value;
@@ -91,7 +108,10 @@ public class ApiTemplate {
 	}
 	
 	/**
-	 * Sets text.
+	 * Sets the text of this API message template.
+	 *
+	 * @param value the text.
+	 * @return this instance of API message template.
 	 */
 	public ApiTemplate setText(String value) {
 		this.text = value;

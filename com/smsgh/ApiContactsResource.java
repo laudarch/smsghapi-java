@@ -3,21 +3,26 @@ package com.smsgh;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+/**
+ * Represents an API contacts resource.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiContactsResource {
-	/**
-	 * Data fields.
-	 */
 	private SmsghApi apiHost;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiContactsResource(SmsghApi apiHost) {
 		this.apiHost = apiHost;
 	}
 	
 	/**
-	 * Gets all contacts.
+	 * Retrieves all contacts.
+	 *
+	 * @return API list of contacts.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContact> get()
 		throws ApiException {
@@ -25,7 +30,12 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contacts by groupId and filter.
+	 * Retrieves contacts by group ID and filter.
+	 *
+	 * @param  groupId  the ID of the group to search within.
+	 * @param  filter   name filter to apply to contacts.
+	 * @return API list of contacts.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContact> get(long groupId, String filter)
 		throws ApiException {
@@ -33,7 +43,12 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contacts by page and pageSize.
+	 * Retrieves contacts by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of contacts.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContact> get(int page, int pageSize)
 		throws ApiException {
@@ -41,7 +56,14 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contacts by page, pagesize, groupId and filter.
+	 * Retrieves contacts by page, page size, group ID and filter.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @param  groupId  the ID of contact group to search within.
+	 * @param  filter   name filter to apply to contacts.
+	 * @return API list of contacts.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContact> get
 		(int page, int pageSize, long groupId, String filter)
@@ -61,7 +83,11 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contact by ID.
+	 * Retrieves a contact by ID.
+	 *
+	 * @param  contactId  ID of the contact to query.
+	 * @return instance of ApiContact representing the queried contact.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContact get(long contactId)
 		throws ApiException {
@@ -74,7 +100,11 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contact by number.
+	 * Retrieves a contact by phone number.
+	 *
+	 * @param  number  phone number of the contact to query.
+	 * @return instance of ApiContact representing the queried contact.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContact get(String number)
 		throws ApiException {
@@ -89,7 +119,11 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Creates new contact.
+	 * Creates a new contact.
+	 *
+	 * @param  apiContact  the contact to create.
+	 * @return instance of ApiContact representing the created contact.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContact create(ApiContact apiContact)
 		throws ApiException {
@@ -104,7 +138,10 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Updates contact.
+	 * Updates details of a contact.
+	 *
+	 * @param  apiContact  instace of the API contact to update.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void update(ApiContact apiContact)
 		throws ApiException {
@@ -120,7 +157,10 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Deletes contact.
+	 * Deletes an API contact.
+	 *
+	 * @param  contactId  ID of the contact to delete.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteContact(long contactId)
 		throws ApiException {
@@ -129,7 +169,10 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Get all contact groups.
+	 * Retrieves all contact groups.
+	 *
+	 * @return an API list of contact groups.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContactGroup> getGroups()
 		throws ApiException {
@@ -137,7 +180,12 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contact groups by page and pageSize.
+	 * Retrieves contact groups by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return an API list of contact groups.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContactGroup> getGroups(int page, int pageSize)
 		throws ApiException {
@@ -146,7 +194,11 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Gets contact group by ID.
+	 * Retrieves details of a contact group by ID.
+	 *
+	 * @param  groupId  ID of the contact group to query.
+	 * @return an instance of ApiContactGroup representing the queried group.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContactGroup getGroup(long groupId)
 		throws ApiException {
@@ -160,6 +212,10 @@ public class ApiContactsResource {
 	
 	/**
 	 * Creates a new contact group.
+	 *
+	 * @param  apiContactGroup  the API contact group to create.
+	 * @return instance of ApiContactGroup representing the created group.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContactGroup create(ApiContactGroup apiContactGroup)
 		throws ApiException {
@@ -174,7 +230,10 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Updates contact group.
+	 * Updates the details of a contact group.
+	 *
+	 * @param  apiContactGroup  the API contact group to update.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void update(ApiContactGroup apiContactGroup)
 		throws ApiException {
@@ -190,7 +249,10 @@ public class ApiContactsResource {
 	}
 	
 	/**
-	 * Deletes contact group by ID.
+	 * Deletes a contact group.
+	 *
+	 * @param  groupId ID of the contact group to delete.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteGroup(long groupId)
 		throws ApiException {

@@ -6,10 +6,12 @@ import java.util.ArrayList;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API campaign.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiCampaign {
-	/**
-	 * Data fields.
-	 */
 	private String             accountId;
 	private List<ApiAction>    actions;
 	private String             brief;
@@ -23,13 +25,15 @@ public class ApiCampaign {
 	private boolean            pendingApproval;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiCampaign() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiCampaign(JsonObject json) {
 		JsonValue val;
@@ -79,84 +83,109 @@ public class ApiCampaign {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API campaign.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets actions.
+	 * Gets the actions of this API campaign.
+	 *
+	 * @return list of API actions.
 	 */
 	public List<ApiAction> getActions() {
 		return this.actions;
 	}
 	
 	/**
-	 * Gets brief.
+	 * Gets the brief of this API campaign.
+	 *
+	 * @return the brief.
 	 */
 	public String getBrief() {
 		return this.brief;
 	}
 	
 	/**
-	 * Gets campaignId.
+	 * Gets the ID of this API campaign.
+	 *
+	 * @return the ID.
 	 */
 	public long getCampaignId() {
 		return this.campaignId;
 	}
 	
 	/**
-	 * Gets dateCreated.
+	 * Gets the created date of this API campaign.
+	 *
+	 * @return the created date.
 	 */
 	public Date getDateCreated() {
 		return this.dateCreated;
 	}
 	
 	/**
-	 * Gets dateEnded.
+	 * Gets the end date of this API campaign.
+	 *
+	 * @return the end date.
 	 */
 	public Date getDateEnded() {
 		return this.dateEnded;
 	}
 	
 	/**
-	 * Gets description.
+	 * Gets the description of this API campaign.
+	 *
+	 * @return the description.
 	 */
 	public String getDescription() {
 		return this.description;
 	}
 	
 	/**
-	 * Gets enabled.
+	 * Indicates whether this API campaign is enabled.
+	 *
+	 * @return the boolean enabled state.
 	 */
 	public boolean getEnabled() {
 		return this.enabled;
 	}
 	
 	/**
-	 * Gets isDefault.
+	 * Indicates whether this API campaign is the default.
+	 *
+	 * @return the boolean default state.
 	 */
 	public boolean isDefault() {
 		return this.isDefault;
 	}
 	
 	/**
-	 * Gets moKeywords.
+	 * Gets the MO keywords of this API campaign.
+	 *
+	 * @return list of MO keywords.
 	 */
 	public List<ApiMoKeyWord> getMoKeyWords() {
 		return this.moKeyWords;
 	}
 	
 	/**
-	 * Gets pendingApproval.
+	 * Indicates whether this API campaign is pending approval.
+	 *
+	 * @return the boolean pending-approval state.
 	 */
 	public boolean getPendingApproval() {
 		return this.pendingApproval;
 	}
 	
 	/**
-	 * Sets brief.
+	 * Sets the brief of this API campaign.
+	 *
+	 * @param  value  the brief.
+	 * @return this instance of API campaign.
 	 */
 	public ApiCampaign setBrief(String value) {
 		this.brief = value;
@@ -164,7 +193,10 @@ public class ApiCampaign {
 	}
 	
 	/**
-	 * Sets description.
+	 * Sets the description of this API campaign.
+	 *
+	 * @param  value  the description.
+	 * @return this instance of API campaign.
 	 */
 	public ApiCampaign setDescription(String value) {
 		this.description = value;
@@ -172,7 +204,10 @@ public class ApiCampaign {
 	}
 	
 	/**
-	 * Sets dateCreated.
+	 * Sets the created date of this API campaign.
+	 *
+	 * @param  value  the created date.
+	 * @return this instance of API campaign.
 	 */
 	public ApiCampaign setDateCreated(Date value) {
 		this.dateCreated = value;
@@ -180,7 +215,10 @@ public class ApiCampaign {
 	}
 	
 	/**
-	 * Sets dateEndend.
+	 * Sets the end date of this API campaign.
+	 *
+	 * @param  value  the end date.
+	 * @return this instance of API campaign.
 	 */
 	public ApiCampaign setDateEnded(Date value) {
 		this.dateEnded = value;

@@ -4,10 +4,12 @@ import java.util.Date;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API service.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiService {
-	/**
-	 * Data fields.
-	 */
 	private String  accountId;
 	private Date    billDate;
 	private long    billingCycleId;
@@ -21,7 +23,9 @@ public class ApiService {
 	private long    serviceTypeId;
 	
 	/**
-	 * Primary constructor.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiService(JsonObject json) {
 		JsonValue val;
@@ -66,77 +70,99 @@ public class ApiService {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API service.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets billDate.
+	 * Gets the bill date of this API service.
+	 *
+	 * @return the bill date.
 	 */
 	public Date getBillDate() {
 		return this.billDate;
 	}
 	
 	/**
-	 * Gets billingCycleId.
+	 * Gets the billing cycle ID of this API service.
+	 *
+	 * @return the billing cycle ID.
 	 */
 	public long getBillingCycleId() {
 		return this.billingCycleId;
 	}
 	
 	/**
-	 * Gets dateCreated.
+	 * Gets the created date of this API service.
+	 *
+	 * @return the created date.
 	 */
 	public Date getDateCreated() {
 		return this.dateCreated;
 	}
 	
 	/**
-	 * Gets description.
+	 * Gets the description of this API service.
+	 *
+	 * @return the description.
 	 */
 	public String getDescription() {
 		return this.description;
 	}
 	
 	/**
-	 * Gets isCreditBased.
+	 * Indicates whether this API service is credit based.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isCreditBased() {
 		return this.isCreditBased;
 	}
 	
 	/**
-	 * Gets isPrepaid.
+	 * Indicates whether this API service is prepaid.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isPrepaid() {
 		return this.isPrepaid;
 	}
 	
 	/**
-	 * Gets rate.
+	 * Gets the rate of this API service.
+	 *
+	 * @return the rate.
 	 */
 	public double getRate() {
 		return this.rate;
 	}
 	
 	/**
-	 * Gets serviceId.
+	 * Gets the service ID of this API service.
+	 *
+	 * @return the service ID.
 	 */
 	public long getServiceId() {
 		return this.serviceId;
 	}
 	
 	/**
-	 * Gets serviceStatusTypeId.
+	 * Gets the service status type ID of this API service.
+	 *
+	 * @return the service status type ID.
 	 */
 	public long getServiceStatusTypeId() {
 		return this.serviceStatusTypeId;
 	}
 	
 	/**
-	 * Gets serviceTypeId.
+	 * Gets the service type ID of this API service.
+	 *
+	 * @return the service type ID.
 	 */
 	public long getServiceTypeId() {
 		return this.serviceTypeId;

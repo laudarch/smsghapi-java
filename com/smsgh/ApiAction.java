@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API action.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiAction {
-	/**
-	 * Data fields.
-	 */
 	private String  actionMeta;
 	private long    actionTypeId;
 	private long    campaignId;
@@ -14,7 +16,7 @@ public class ApiAction {
 	private boolean isActive;
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this class.
 	 */
 	public ApiAction(JsonObject json) {
 		JsonValue val;
@@ -41,35 +43,46 @@ public class ApiAction {
 	}
 	
 	/**
-	 * Gets actionMeta.
+	 * Gets the action meta of this API action.
+	 *
+	 * @return the action meta.
 	 */
 	public String getActionMeta() {
 		return this.actionMeta;
 	}
 	
 	/**
-	 * Gets actionTypeId.
+	 * Gets the action type ID of this API action.
+	 *
+	 * @return the action type ID.
 	 */
 	public long getActionTypeId() {
 		return this.actionTypeId;
 	}
 	
 	/**
-	 * Gets campaignId.
+	 * Gets the campaign ID of this API action.
+	 *
+	 * @return the campaign ID.
 	 */
 	public long getCampaignId() {
 		return this.campaignId;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API action.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets isActive.
+	 * Gets a boolean value indicating whether this API action is
+	 * active or not.
+	 *
+	 * @return the boolean active state.
 	 */
 	public boolean isActive() {
 		return this.isActive;

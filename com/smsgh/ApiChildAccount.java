@@ -4,10 +4,12 @@ import java.util.Date;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API child account.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiChildAccount {
-	/**
-	 * Data fields.
-	 */
 	private long    accountNumber;
 	private double  balance;
 	private boolean canImpersonate;
@@ -22,7 +24,9 @@ public class ApiChildAccount {
 	private Date    timeRemoved;
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  gauranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiChildAccount(JsonObject json) {
 		JsonValue val;
@@ -70,84 +74,108 @@ public class ApiChildAccount {
 	}
 	
 	/**
-	 * Gets accountNumber.
+	 * Gets the account number of this API child account.
+	 *
+	 * @return the account number.
 	 */
 	public long getAccountNumber() {
 		return this.accountNumber;
 	}
 	
 	/**
-	 * Gets balance.
+	 * Gets the balance of this API child account.
+	 *
+	 * @return the balance.
 	 */
 	public double getBalance() {
 		return this.balance;
 	}
 	
 	/**
-	 * Gets canImpersonate.
+	 * Indicates whether this child account can be impersonated.
+	 *
+	 * @return the boolean state impersonation.
 	 */
 	public boolean canImpersonate() {
 		return this.canImpersonate;
 	}
 	
 	/**
-	 * Gets child.
+	 * Gets the child of this API child account.
+	 *
+	 * @return the child.
 	 */
 	public String getChild() {
 		return this.child;
 	}
 	
 	/**
-	 * Gets credit.
+	 * Gets the credit on this API child account.
+	 *
+	 * @return the credit.
 	 */
 	public double getCredit() {
 		return this.credit;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API child account.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets parent.
+	 * Gets the parent of this API child account.
+	 *
+	 * @return the parent.
 	 */
 	public String getParent() {
 		return this.parent;
 	}
 	
 	/**
-	 * Gets productId.
+	 * Gets the product ID of this API child account.
+	 *
+	 * @return the product ID.
 	 */
 	public String getProductId() {
 		return this.productId;
 	}
 	
 	/**
-	 * Gets productName.
+	 * Gets the product name of this API child account.
+	 *
+	 * @return the product name.
 	 */
 	public String getProductName() {
 		return this.productName;
 	}
 	
 	/**
-	 * Gets status.
+	 * Gets the status of this API child account.
+	 *
+	 * @return the status.
 	 */
 	public int getStatus() {
 		return this.status;
 	}
 	
 	/**
-	 * Gets timeCreated.
+	 * Gets the created time of this API child account.
+	 *
+	 * @return the created time.
 	 */
 	public Date getTimeCreated() {
 		return this.timeCreated;
 	}
 	
 	/**
-	 * Gets timeRemoved.
+	 * Gets the removed time of this API child account.
+	 *
+	 * @return the removed time.
 	 */
 	public Date getTimeRemoved() {
 		return this.timeRemoved;

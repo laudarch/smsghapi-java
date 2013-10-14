@@ -4,10 +4,12 @@ import java.util.Date;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API sender.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiSender {
-	/**
-	 * Data fields.
-	 */
 	private String  accountId;
 	private String  address;
 	private long    id;
@@ -16,13 +18,13 @@ public class ApiSender {
 	private Date    timeDeleted;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiSender() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
 	 */
 	public ApiSender(JsonObject json) {
 		JsonValue val;
@@ -52,49 +54,64 @@ public class ApiSender {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API sender.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets address.
+	 * Gets the address of this API sender.
+	 *
+	 * @return the address.
 	 */
 	public String getAddress() {
 		return this.address;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API sender.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets isDeleted.
+	 * Indicates whether this API sender is deleted.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isDeleted() {
 		return this.isDeleted;
 	}
 	
 	/**
-	 * Gets timeAdded.
+	 * Gets the added time of this API sender.
+	 *
+	 * @return the added time.
 	 */
 	public Date getTimeAdded() {
 		return this.timeAdded;
 	}
 	
 	/**
-	 * Gets timeDeleted.
+	 * Gets the deleted time of this API sender.
+	 *
+	 * @return the deleted time.
 	 */
 	public Date getTimeDeleted() {
 		return this.timeDeleted;
 	}
 	
 	/**
-	 * Sets address.
+	 * Sets the address of this API sender.
+	 *
+	 * @param value  the address.
+	 * @return this instance of API sender.
 	 */
 	public ApiSender setAddress(String value) {
 		this.address = value;

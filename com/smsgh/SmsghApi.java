@@ -1,11 +1,12 @@
 // $Id: SmsghApi.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 
+/**
+ * Represents an SMSGH API host.
+ *
+ * @author Michael Kwayisi
+ */
 public class SmsghApi {
-	
-	/**
-	 * Data fields.
-	 */
 	private String                   clientId;
 	private String                   clientSecret;
 	private String                   hostname;
@@ -22,20 +23,22 @@ public class SmsghApi {
 	 * Primary constructor.
 	 */
 	public SmsghApi() {
-		this.hostname = "api.smsgh.com";
-		this.port = 443;
-		this.https = true;
-		this.timeout = 15;
-		
-		this.accountResource = new ApiAccountResource(this);
-		this.messagesResource = new ApiMessagesResource(this);
-		this.contactsResource = new ApiContactsResource(this);
-		this.premiumResource = new ApiPremiumResource(this);
+		this.hostname              = "api.smsgh.com";
+		this.port                  = 443;
+		this.https                 = true;
+		this.timeout               = 15;
+		this.accountResource       = new ApiAccountResource(this);
+		this.messagesResource      = new ApiMessagesResource(this);
+		this.contactsResource      = new ApiContactsResource(this);
+		this.premiumResource       = new ApiPremiumResource(this);
 		this.bulkMessagingResource = new ApiBulkMessagingResource(this);
 	}
 	
 	/**
-	 * Constructor with client id and secret.
+	 * Constructor from a client ID and client secret.
+	 *
+	 * @param   clientId      API client ID.
+	 * @param   clientSecret  API client secret.
 	 */
 	public SmsghApi(String clientId, String clientSecret) {
 		this.clientId = clientId;
@@ -43,84 +46,110 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Gets accountResource.
+	 * Gets the API account resource of this SMSGH API host.
+	 *
+	 * @return  instance of the ApiAccountResource class.
 	 */
 	public ApiAccountResource getAccount() {
 		return this.accountResource;
 	}
 	
 	/**
-	 * Gets messagesResource.
+	 * Gets the API messages resource of this SMSGH API host.
+	 *
+	 * @return  instance of the ApiMessagesResource class.
 	 */
 	public ApiMessagesResource getMessages() {
 		return this.messagesResource;
 	}
 	
 	/**
-	 * Gets contactsResource.
+	 * Gets the API contacts resource of this SMSGH API host.
+	 *
+	 * @return  instance of the ApiContactsResource class.
 	 */
 	public ApiContactsResource getContacts() {
 		return this.contactsResource;
 	}
 	
 	/**
-	 * Gets premiumResource.
+	 * Gets the API premium resource of this SMSGH API host.
+	 *
+	 * @return  instance of the ApiPremiumResource class.
 	 */
 	public ApiPremiumResource getPremium() {
 		return this.premiumResource;
 	}
 	
 	/**
-	 * Gets bulkMessagingResource.
+	 * Gets the API bulk messaging resource of this SMSGH API host.
+	 *
+	 * @return  instance of the ApiBulkMessagingResource class.
 	 */
 	public ApiBulkMessagingResource getBulkMessaging() {
 		return this.bulkMessagingResource;
 	}
 	
 	/**
-	 * Gets clientId.
+	 * Gets the API client ID of this SMSGH API host.
+	 *
+	 * @return  the API client ID or null if not set.
 	 */
 	public String getClientId() {
 		return this.clientId;
 	}
 	
 	/**
-	 * Gets clientSecret.
+	 * Gets the API client secret of this SMSGH API host.
+	 *
+	 * @return  the API client secret or null if not set.
 	 */
 	public String getClientSecret() {
 		return this.clientSecret;
 	}
 	
 	/**
-	 * Gets hostname.
+	 * Gets the hostname of this SMSGH API host.
+	 *
+	 * @return  the hostname or null if not set.
 	 */
 	public String getHostname() {
 		return this.hostname;
 	}
 	
 	/**
-	 * Gets port.
+	 * Gets the port of this SMSGH API host.
+	 *
+	 * @return  the port or 0 if not set.
 	 */
 	public int getPort() {
 		return this.port;
 	}
 	
 	/**
-	 * Gets https.
+	 * Gets a value indicating whether this SMSGH API host uses SSL
+	 * when making connections to the remote host or not.
+	 *
+	 * @return  boolean true if SSL is used otherwise false.
 	 */
 	public boolean isHttps() {
 		return this.https;
 	}
 	
 	/**
-	 * Gets timeout.
+	 * Gets the network I/O timeout, in seconds, of this SMSGH API host.
+	 *
+	 * @return  the timeout value or 0 if not set.
 	 */
 	public int getTimeout() {
 		return this.timeout;
 	}
 	
 	/**
-	 * Sets clientId.
+	 * Sets the client ID for this SMSGH API host.
+	 *
+	 * @param   value   API client ID.
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setClientId(String value) {
 		this.clientId = value;
@@ -128,7 +157,10 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Sets clientSecret.
+	 * Sets the client secret for this SMSGH API host.
+	 *
+	 * @param   value   API client secret.
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setClientSecret(String value) {
 		this.clientSecret = value;
@@ -136,7 +168,10 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Sets hostname.
+	 * Sets the hostname for this SMSGH API host.
+	 *
+	 * @param   value   hostname.
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setHostname(String value) {
 		this.hostname = value;
@@ -144,7 +179,11 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Sets port
+	 * Sets the port number to connect to on the remote host for this
+	 * SMSGH API host.
+	 *
+	 * @param   value   port number.
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setPort(int value) {
 		this.port = value;
@@ -152,7 +191,11 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Sets protocol.
+	 * Sets a value indicating whether SSL should be used in connecting
+	 * to the remote host or otherwise (plain TCP).
+	 *
+	 * @param   value   SSL connection?
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setHttps(boolean value) {
 		this.https = value;
@@ -160,7 +203,11 @@ public class SmsghApi {
 	}
 	
 	/**
-	 * Sets timeout.
+	 * Sets the network I/O timeout value, in seconds, to be used for
+	 * connection.
+	 *
+	 * @param   value   timeout in seconds.
+	 * @return  this instance of the SMSGH API host.
 	 */
 	public SmsghApi setTimeout(int value) {
 		this.timeout = value;

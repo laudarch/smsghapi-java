@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represenets an API number plan item.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiNumberPlanItem {
-	/**
-	 * Data fields.
-	 */
 	private long   id;
 	private String network;
 	private double payout;
@@ -14,7 +16,9 @@ public class ApiNumberPlanItem {
 	private String shortCode;
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guarateed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiNumberPlanItem(JsonObject json) {
 		JsonValue val;
@@ -41,35 +45,45 @@ public class ApiNumberPlanItem {
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API number plan item.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets network.
+	 * Gets the network of this API number plan item.
+	 *
+	 * @return the network.
 	 */
 	public String getNetwork() {
 		return this.network;
 	}
 	
 	/**
-	 * Gets payout.
+	 * Gets the payout of this API number plan item.
+	 *
+	 * @return the payout.
 	 */
 	public double getPayout() {
 		return this.payout;
 	}
 	
 	/**
-	 * Gets reversePayout.
+	 * Gets the reverse payout of this API number plan item.
+	 *
+	 * @return the reverse payout.
 	 */
 	public double getReversePayout() {
 		return this.reversePayout;
 	}
 	
 	/**
-	 * Gets shortCode.
+	 * Gets the short code of this API number plan item.
+	 *
+	 * @return the short code.
 	 */
 	public String getShortCode() {
 		return this.shortCode;

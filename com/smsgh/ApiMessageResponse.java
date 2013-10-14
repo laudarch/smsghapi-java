@@ -4,11 +4,12 @@ import java.util.UUID;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API message response.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiMessageResponse {
-	
-	/**
-	 * Data fields.
-	 */
 	private String clientReference;
 	private String detail;
 	private UUID   messageId;
@@ -17,7 +18,9 @@ public class ApiMessageResponse {
 	private double rate;
 	
 	/**
-	 * Primary constructor.
+	 * Used internally to initialize the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiMessageResponse(JsonObject json) {
 		JsonValue val;
@@ -47,42 +50,54 @@ public class ApiMessageResponse {
 	}
 	
 	/**
-	 * Gets clientReference.
+	 * Gets the client reference of this API message response.
+	 *
+	 * @return the client reference.
 	 */
 	public String getClientReference() {
 		return this.clientReference;
 	}
 	
 	/**
-	 * Gets detail.
+	 * Gets the detail of this API message response.
+	 *
+	 * @return the detail.
 	 */
 	public String getDetail() {
 		return this.detail;
 	}
 	
 	/**
-	 * Gets messageId.
+	 * Gets the message ID of this API message response.
+	 *
+	 * @return the message ID.
 	 */
 	public UUID getMessageId() {
 		return this.messageId;
 	}
 	
 	/**
-	 * Gets networkId.
+	 * Gets the network ID of this API message response.
+	 *
+	 * @return the network ID.
 	 */
 	public String getNetworkId() {
 		return this.networkId;
 	}
 	
 	/**
-	 * Gets rate.
+	 * Gets the rate of this API message response.
+	 *
+	 * @return the rate.
 	 */
 	public double getRate() {
 		return this.rate;
 	}
 	
 	/**
-	 * Gets stats.
+	 * Gets the status of this API message response.
+	 *
+	 * @return the status.
 	 */
 	public int getStatus() {
 		return this.status;

@@ -2,21 +2,26 @@
 package com.smsgh;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API premium resource.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiPremiumResource {
-	/**
-	 * Data fields.
-	 */
 	private SmsghApi apiHost;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiPremiumResource(SmsghApi apiHost) {
 		this.apiHost = apiHost;
 	}
 	
 	/**
-	 * Gets all number plans.
+	 * Retrieves all number plans.
+	 *
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getNumberPlans
 		() throws ApiException {
@@ -24,7 +29,12 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets number plans by page and pageSize;
+	 * Retrieves number plans by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getNumberPlans
 		(int page, int pageSize) throws ApiException {
@@ -33,7 +43,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets all shared number plans.
+	 * Retrieves all shared number plans.
+	 *
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getSharedNumberPlans
 		() throws ApiException {
@@ -41,7 +54,12 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets shared number plans by page and pageSize.
+	 * Retrieves shared number plans by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getSharedNumberPlans
 		(int page, int pageSize) throws ApiException {
@@ -50,7 +68,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets all not-shared number plans.
+	 * Retrieves all not-shared number plans.
+	 *
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getNotSharedNumberPlans
 		() throws ApiException {
@@ -58,7 +79,12 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets not-shared number plans by page and pageSize.
+	 * Retrieves not-shared number plans by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of number plans.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiNumberPlan> getNotSharedNumberPlans
 		(int page, int pageSize) throws ApiException {
@@ -67,7 +93,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets all keywords for a number plan.
+	 * Retrieves all number plan keywords.
+	 *
+	 * @param  numberPlanId  ID of the number plan to query.
+	 * @return API list of MO keywords.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMoKeyWord> getNumberPlanKeywords
 		(long numberPlanId) throws ApiException {
@@ -75,7 +105,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets keywords for a number plan by page and pageSize.
+	 * Retrieves number plan keywords by page and page size.
+	 *
+	 * @param  numberPlanId  ID of the number plan to query.
+	 * @param  page          one-based index of the page to query.
+	 * @param  pageSize      maximum number of entries in a page.
+	 * @return API list of MO keywords.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMoKeyWord> getNumberPlanKeyWords
 		(long numberPlanId, int page, int pageSize) throws ApiException {
@@ -84,7 +120,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets all campaigns.
+	 * Retrieves all campaigns.
+	 *
+	 * @return API list of campaigns.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiCampaign> getCampaigns
 		() throws ApiException {
@@ -92,7 +131,12 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets campaigns by page and pageSize.
+	 * Retrieves campaigns by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of campaigns.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiCampaign> getCampaigns
 		(int page, int pageSize) throws ApiException {
@@ -101,7 +145,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Get campaign by ID.
+	 * Retrieves details of a campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to query.
+	 * @return instance of ApiCampaign representing the queried campaign.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign getCampaign
 		(long campaignId) throws ApiException {
@@ -114,7 +162,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Creates new campaign.
+	 * Creates a new campaign.
+	 *
+	 * @param  apiCampaign  API campaign to create.
+	 * @return instance of ApiCampaign representing the created campaign.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign create
 		(ApiCampaign apiCampaign) throws ApiException {
@@ -129,7 +181,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Updates campaign.
+	 * Updates a campaign.
+	 *
+	 * @param  apiCampaign  API campaign to update.
+	 * @return instance of ApiCampaign representing the updated campaign.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign update
 		(ApiCampaign apiCampaign) throws ApiException {
@@ -145,7 +201,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Deletes a campaign by ID.
+	 * Deletes a campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to delete.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteCampaign
 		(long campaignId) throws ApiException {
@@ -154,7 +213,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets all keywords.
+	 * Retrieves all MO keywords.
+	 *
+	 * @return API list of MO keywords.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMoKeyWord> getKeyWords
 		() throws ApiException {
@@ -162,7 +224,12 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets keywords by page and pageSize.
+	 * Retrieves MO keywords by page and page size.
+	 *
+	 * @param  page     one-based index of the page to query.
+	 * @param  pageSize maximum number of entries in a page.
+	 * @return API list of MO keywords.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMoKeyWord> getKeyWords
 		(int page, int pageSize) throws ApiException {
@@ -171,7 +238,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Creates new keyword.
+	 * Creates a new MO keyword.
+	 *
+	 * @param  apiMoKeyWord  the MO keyword to create.
+	 * @return instance of ApiMoKeyword representing the created keyword.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMoKeyWord create
 		(ApiMoKeyWord apiMoKeyWord) throws ApiException {
@@ -186,7 +257,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Updates a keyword.
+	 * Updates an MO keyword.
+	 *
+	 * @param  apiMoKeyWord  the MO keyword to update.
+	 * @return instance of ApiMoKeyWord representing the updated keyword.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiMoKeyWord update
 		(ApiMoKeyWord apiMoKeyWord) throws ApiException {
@@ -202,7 +277,10 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Deletes keyword.
+	 * Deletes an MO keyword.
+	 *
+	 * @param  keywordId  ID of the keyword to delete.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteKeyword
 		(long keywordId) throws ApiException {
@@ -211,7 +289,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds keyword to campaign.
+	 * Adds an MO keyword to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to have the MO keyword.
+	 * @param  keywordId   ID of the MO keyword to add to campaign.
+	 * @return instance of ApiCampaign represented the API campaign to
+	 *         which the MO keyword was added.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addKeywordToCampaign
 		(long campaignId, long keywordId) throws ApiException {
@@ -225,7 +309,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Removes keyword from campaign.
+	 * Removes an MO keyword from a campaign.
+	 *
+	 * @param  campaignId  ID of the campaign having the MO keyword.
+	 * @param  keywordId   ID of the keyword to remove from the campaign.
+	 * @throws ApiException if an error occurs.
 	 */
 	public void removeKeywordFromCampaign
 		(long campaignId, long keywordId) throws ApiException {
@@ -234,7 +322,11 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Get all campaign actions.
+	 * Retrieves all actions on a campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to query.
+	 * @return API list of actions.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiAction> getActions
 		(long campaignId) throws ApiException {
@@ -242,7 +334,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Gets campaign actions by page and pageSize.
+	 * Retrieves actions on a campaign by page and page size.
+	 *
+	 * @param  campaignId  ID of the campaign to query.
+	 * @param  page        one-based index of the page to query.
+	 * @param  pageSize    maximum number of entries in a page.
+	 * @return API list of actions.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiAction> getActions
 		(long campaignId, int page, int pageSize) throws ApiException {
@@ -251,7 +349,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds default reply action to campaign.
+	 * Adds a default reply action to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to add the action to.
+	 * @param  message     the default reply action message to add.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addDefaultReplyAction
 		(long campaignId, String message) throws ApiException {
@@ -265,7 +369,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds dynamic URL action to campaign with no send response.
+	 * Adds a dynamic URL action, with no send response, to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to add the action to.
+	 * @param  url         the dynamic URL to add.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addDynamicUrlAction
 		(long campaignId, String url) throws ApiException {
@@ -273,7 +383,14 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds dynamic URL action to campaign with send response value.
+	 * Adds a dynamic URL action, with send response, to campaign.
+	 *
+	 * @param  campaignId   ID of the campaign to add the action to.
+	 * @param  url          the dynamic URL to add.
+	 * @param  sendResponse a yes or no value.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addDynamicUrlAction
 		(long campaignId, String url, String sendResponse) throws ApiException {
@@ -288,7 +405,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds email address action to campaign.
+	 * Adds an email address action to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to add the action to.
+	 * @param  address     the email address to add.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addEmailAddressAction
 		(long campaignId, String address) throws ApiException {
@@ -302,7 +425,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds forward to mobile action to campaign.
+	 * Adds a forward-to-mobile action to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to add the action to.
+	 * @param  number     the mobile phone number to add.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addForwardToMobileAction
 		(long campaignId, String number) throws ApiException {
@@ -316,7 +445,13 @@ public class ApiPremiumResource {
 	}
 	
 	/**
-	 * Adds forward to SMPP action to campaign.
+	 * Adds a forward-to-SMPP action to campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to add the action to.
+	 * @param  appId       the app ID to add.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was added to.
+	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addForwardToSmppAction
 		(long campaignId, String appId) throws ApiException {

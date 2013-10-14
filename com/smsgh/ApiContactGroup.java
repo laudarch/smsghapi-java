@@ -3,23 +3,27 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API contact group.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiContactGroup {
-	/**
-	 * Data fields.
-	 */
 	private String accountId;
 	private long   contactCount;
 	private long   groupId;
 	private String name;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiContactGroup() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Initializes the data fields of this instance.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiContactGroup(JsonObject json) {
 		JsonValue val;
@@ -43,35 +47,46 @@ public class ApiContactGroup {
 	}
 	
 	/**
-	 * Gets accountId.
+	 * Gets the account ID of this API contact group.
+	 *
+	 * @return the account ID.
 	 */
 	public String getAccountId() {
 		return this.accountId;
 	}
 	
 	/**
-	 * Gets contactCount.
+	 * Gets the contact count of this API contact group.
+	 *
+	 * @return the contact count.
 	 */
 	public long getContactCount() {
 		return this.contactCount;
 	}
 	
 	/**
-	 * Gets groupId.
+	 * Gets the ID of this API contact group.
+	 *
+	 * @return the ID.
 	 */
 	public long getGroupId() {
 		return this.groupId;
 	}
 	
 	/**
-	 * Gets name.
+	 * Gets the name of this API contact group.
+	 *
+	 * @return the name.
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
 	/**
-	 * Sets name.
+	 * Sets the name of this API contact group.
+	 *
+	 * @param  value  the name.
+	 * @return instance of this API contact group.
 	 */
 	public ApiContactGroup setName(String value) {
 		this.name = value;

@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API MO keyword.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiMoKeyWord {
-	/**
-	 * Data fields.
-	 */
 	private String  alias1;
 	private String  alias2;
 	private String  alias3;
@@ -19,13 +21,15 @@ public class ApiMoKeyWord {
 	private long    numberPlanId;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiMoKeyWord() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * Used internally to initialize the data fields of this class.
+	 *
+	 * @param json  guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiMoKeyWord(JsonObject json) {
 		JsonValue val;
@@ -67,77 +71,100 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Gets alias1.
+	 * Gets the alias 1 of this API MO keyword.
+	 *
+	 * @return the alias 1.
 	 */
 	public String getAlias1() {
 		return this.alias1;
 	}
 	
 	/**
-	 * Gets alias2.
+	 * Gets the alias 2 of this API MO keyword.
+	 *
+	 * @return the alias 2.
 	 */
 	public String getAlias2() {
 		return this.alias2;
 	}
 	
 	/**
-	 * Gets alias3.
+	 * Gets the alias 3 of this API MO keyword.
+	 *
+	 * @return the alias 3.
 	 */
 	public String getAlias3() {
 		return this.alias3;
 	}
 	
 	/**
-	 * Gets alias4.
+	 * Gets the alias 4 of this API MO keyword.
+	 *
+	 * @return the alias 4.
 	 */
 	public String getAlias4() {
 		return this.alias4;
 	}
 	
 	/**
-	 * Gets alias5.
+	 * Gets the alias 5 of this API MO keyword.
+	 *
+	 * @return the alias 5.
 	 */
 	public String getAlias5() {
 		return this.alias5;
 	}
 	
 	/**
-	 * Gets id.
+	 * Gets the ID of this API MO keyword.
+	 *
+	 * @return the ID.
 	 */
 	public long getId() {
 		return this.id;
 	}
 	
 	/**
-	 * Gets isActive.
+	 * Indicates whether this API MO keyword is active.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isActive() {
 		return this.isActive;
 	}
 	
 	/**
-	 * Gets isDefault.
+	 * Indicates whether this API MO keyword is default.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean isDefault() {
 		return this.isDefault;
 	}
 	
 	/**
-	 * Gets keyword.
+	 * Gets the keyword of this API MO keyword.
+	 *
+	 * @return the keyword.
 	 */
 	public String getKeyword() {
 		return this.keyword;
 	}
 	
 	/**
-	 * Gets numberPlanId.
+	 * Gets the number plan ID of this API MO keyword.
+	 *
+	 * @return the number plan ID.
 	 */
 	public long getNumberPlanId() {
 		return this.numberPlanId;
 	}
 	
 	/**
-	 * Sets alias1.
+	 * Sets the alias 1 of this API MO keyword.
+	 *
+	 * @param value  the alias 1.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setAlias1(String value) {
 		this.alias1 = value;
@@ -145,7 +172,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets alias2.
+	 * Sets the alias 2 of this API MO keyword.
+	 *
+	 * @param value  the alias 2.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setAlias2(String value) {
 		this.alias2 = value;
@@ -153,7 +183,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets alias3.
+	 * Sets the alias 3 of this API MO keyword.
+	 *
+	 * @param value  the alias 3.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setAlias3(String value) {
 		this.alias3 = value;
@@ -161,7 +194,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets alias4.
+	 * Sets the alias 4 of this API MO keyword.
+	 *
+	 * @param value  the alias 4.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setAlias4(String value) {
 		this.alias4 = value;
@@ -169,7 +205,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets alias5.
+	 * Sets the alias 5 of this API MO keyword.
+	 *
+	 * @param value  the alias 5.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setAlias5(String value) {
 		this.alias5 = value;
@@ -177,7 +216,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets isActive.
+	 * Sets a value indicating whether this API MO keyword is active.
+	 *
+	 * @param value  the boolean state.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setActive(boolean value) {
 		this.isActive = value;
@@ -185,7 +227,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets isDefault.
+	 * Sets a value indicating whether this API MO keyword is default.
+	 *
+	 * @param value  the boolean state.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setDefault(boolean value) {
 		this.isDefault = value;
@@ -193,7 +238,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets keyword.
+	 * Sets the keyword of this API MO keyword.
+	 *
+	 * @param value  the keyword.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setKeyword(String value) {
 		this.keyword = value;
@@ -201,7 +249,10 @@ public class ApiMoKeyWord {
 	}
 	
 	/**
-	 * Sets numberPlanId.
+	 * Sets the number plan ID of this API MO keyword.
+	 *
+	 * @param value  the number plan ID.
+	 * @return this instance of API MO keyword.
 	 */
 	public ApiMoKeyWord setNumberPlanId(long value) {
 		this.numberPlanId = value;

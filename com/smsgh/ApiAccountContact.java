@@ -3,10 +3,12 @@ package com.smsgh;
 import com.smsgh.json.JsonObject;
 import com.smsgh.json.JsonValue;
 
+/**
+ * Represents an API account contact.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiAccountContact {
-	/**
-	 * Data fields.
-	 */
 	private long   accountContactId;
 	private String address1;
 	private String address2;
@@ -24,13 +26,16 @@ public class ApiAccountContact {
 	private String secondaryPhone;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes an instance of the ApiAccountContact class.
 	 */
 	public ApiAccountContact() {
 	}
 	
 	/**
-	 * Constructor from JSON.
+	 * An internal constructor to initialize the data fields of an
+	 * already instantiated API account account.
+	 *
+	 * @param  json  a guaranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiAccountContact(JsonObject json) {
 		JsonValue val;
@@ -87,112 +92,145 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Gets accountContactId.
+	 * Gets the account contact ID of this API account contact.
+	 *
+	 * @return  the account contact ID or 0 if not set.
 	 */
 	public long getAccountContactId() {
 		return this.accountContactId;
 	}
 	
 	/**
-	 * Gets address1.
+	 * Gets the address 1 of this API account contact.
+	 *
+	 * @return  the address 1 or null if not set.
 	 */
 	public String getAddress1() {
 		return this.address1;
 	}
 	
 	/**
-	 * Gets address2.
+	 * Gets the address 2 of this API account contact.
+	 *
+	 * @return  the address 2 or null if not set.
 	 */
 	public String getAddress2() {
 		return this.address2;
 	}
 	
 	/**
-	 * Gets city.
+	 * Gets the city of this API account contact.
+	 *
+	 * @return  the city or null if not set.
 	 */
 	public String getCity() {
 		return this.city;
 	}
 	
 	/**
-	 * Gets country.
+	 * Gets the country of this API account contact.
+	 *
+	 * @return  the country or null if not set.
 	 */
 	public String getCountry() {
 		return this.country;
 	}
 	
 	/**
-	 * Gets firstName.
+	 * Gets the first name of this API account contact.
+	 *
+	 * @return  the first name or null if not set.
 	 */
 	public String getFirstName() {
 		return this.firstName;
 	}
 	
 	/**
-	 * Gets lastName.
+	 * Gets the last name of this API account contact.
+	 *
+	 * @return  the last name or null if not set.
 	 */
 	public String getLastName() {
 		return this.lastName;
 	}
 	
 	/**
-	 * Gets province.
+	 * Gets the province of this API account contact.
+	 *
+	 * @return  the province or null if not set.
 	 */
 	public String getProvince() {
 		return this.province;
 	}
 	
 	/**
-	 * Gets postalCode.
+	 * Gets the postal code of this API account contact.
+	 *
+	 * @return  the postal code or null if not set.
 	 */
 	public String getPostalCode() {
 		return this.postalCode;
 	}
 	
 	/**
-	 * Gets primaryEmail.
+	 * Gets the primary email of this API account contact.
+	 *
+	 * @return  the primary email or null if not set.
 	 */
 	public String getPrimaryEmail() {
 		return this.primaryEmail;
 	}
 	
 	/**
-	 * Gets primaryPhone.
+	 * Gets the primary phone number of this API account contact.
+	 *
+	 * @return  the primary phone number or null if not set.
 	 */
 	public String getPrimaryPhone() {
 		return this.primaryPhone;
 	}
 	
 	/**
-	 * Gets privateNote.
+	 * Gets the private note of this API account contact.
+	 *
+	 * @return  the private note or null if not set.
 	 */
 	public String getPrivateNote() {
 		return this.privateNote;
 	}
 	
 	/**
-	 * Gets publicNote.
+	 * Gets the public note of this API account contact.
+	 *
+	 * @return  the public note or null if not set.
 	 */
 	public String getPublicNote() {
 		return this.publicNote;
 	}
 	
 	/**
-	 * Gets secodaryEmail.
+	 * Gets the secondary email of this API account contact.
+	 *
+	 * @return  the secondary email or null if not set.
 	 */
 	public String getSecondaryEmail() {
 		return this.secondaryEmail;
 	}
 	
 	/**
-	 * Gets secondaryPhone.
+	 * Gets the secondary phone number of this API account contact.
+	 *
+	 * @return  the secondary phone number or null if not set.
 	 */
 	public String getSecondaryPhone() {
 		return this.secondaryPhone;
 	}
 	
 	/**
-	 * Sets address1.
+	 * Sets the address 1 of this API account contact.
+	 *
+	 * @param   value   the address 1.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setAddress1(String value) {
 		this.address1 = value;
@@ -200,7 +238,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets address2.
+	 * Sets the address 2 of this API account contact.
+	 *
+	 * @param   value   the address 2.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setAddress2(String value) {
 		this.address2 = value;
@@ -208,7 +249,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets city.
+	 * Sets the city of this API account contact.
+	 *
+	 * @param   value   the city of.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setCity(String value) {
 		this.city = value;
@@ -216,7 +260,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets country.
+	 * Sets the country of this API account contact.
+	 *
+	 * @param   value   the country.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setCountry(String value) {
 		this.country = value;
@@ -224,7 +271,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets firstName.
+	 * Sets the first name of this API account contact.
+	 *
+	 * @param   value   the first name.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setFirstName(String value) {
 		this.firstName = value;
@@ -232,7 +282,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets lastName.
+	 * Sets the last name of this API account contact.
+	 *
+	 * @param   value   the last name.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setLastName(String value) {
 		this.lastName = value;
@@ -240,7 +293,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets province.
+	 * Sets the province of this API account contact.
+	 *
+	 * @param   value   the province.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setProvince(String value) {
 		this.province = value;
@@ -248,7 +304,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets postalCode.
+	 * Sets the postal code of this API account contact.
+	 *
+	 * @param   value   the postal code.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setPostalCode(String value) {
 		this.postalCode = value;
@@ -256,7 +315,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets primaryEmail.
+	 * Sets the primary email of this API account contact.
+	 *
+	 * @param   value   the primary email.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setPrimaryEmail(String value) {
 		this.primaryEmail = value;
@@ -264,7 +326,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets primaryPhone.
+	 * Sets the primary phone number of this API account contact.
+	 *
+	 * @param   value   the primary phone number.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setPrimaryPhone(String value) {
 		this.primaryPhone = value;
@@ -272,7 +337,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets privateNote.
+	 * Sets the private note of this API account contact.
+	 *
+	 * @param   value   the private note.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setPrivateNote(String value) {
 		this.privateNote = value;
@@ -280,7 +348,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets publicNote.
+	 * Sets the public note of this API account contact.
+	 *
+	 * @param   value   the public note.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setPublicNote(String value) {
 		this.publicNote = value;
@@ -288,7 +359,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets secondaryEmail.
+	 * Sets the secondary email of this API account contact.
+	 *
+	 * @param   value   the secondary email.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setSecondaryEmail(String value) {
 		this.secondaryEmail = value;
@@ -296,7 +370,10 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * Sets secondaryPhone.
+	 * Sets the secondary phone number of this API account contact.
+	 *
+	 * @param   value   the secondary phone number.
+	 * @return  the instance of this API account contact.
 	 */
 	public ApiAccountContact setSecondaryPhone(String value) {
 		this.secondaryPhone = value;
@@ -304,7 +381,11 @@ public class ApiAccountContact {
 	}
 	
 	/**
-	 * toJson.
+	 * Returns a JSON representation of this API account contact
+	 * containing only the writable properties. Don't call this method
+	 * in your own code.
+	 *
+	 * @return  JSON of this object.
 	 */
 	public String toJson() {
 		return new JsonObject()

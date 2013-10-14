@@ -6,10 +6,12 @@ import java.text.SimpleDateFormat;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
+/**
+ * Represents an API message.
+ *
+ * @author Michael Kwayisi
+ */
 public class ApiMessage {
-	/**
-	 * Data fields.
-	 */
 	private int     apiMessageType = -1;
 	private String  clientReference;
 	private String  content;
@@ -28,14 +30,15 @@ public class ApiMessage {
 	private Date    updateTime;
 	
 	/**
-	 * Primary constructor.
+	 * Initializes a new instance of this class.
 	 */
 	public ApiMessage() {
-	
 	}
 	
 	/**
-	 * Constructor to parse Json.
+	 * Used internally to intitialize the data fields of this instance.
+	 *
+	 * @param json  gauranteed instance of com.smsgh.json.JsonObject.
 	 */
 	public ApiMessage(JsonObject json) {
 		JsonValue val;
@@ -95,119 +98,154 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Gets apiMessageType.
+	 * Gets the API message type of this API message.
+	 *
+	 * @return the API message type.
 	 */
 	public int getApiMessageType() {
 		return this.apiMessageType;
 	}
 	
 	/**
-	 * Gets clientReference.
+	 * Gets the client reference of this API message.
+	 *
+	 * @return the client reference.
 	 */
 	public String getClientReference() {
 		return this.clientReference;
 	}
 	
 	/**
-	 * Gets content.
+	 * Gets the content of this API message.
+	 *
+	 * @return the content.
 	 */
 	public String getContent() {
 		return this.content;
 	}
 	
 	/**
-	 * Gets direction.
+	 * Gets the direction of this API message.
+	 *
+	 * @return the direction.
 	 */
 	public String getDirection() {
 		return this.direction;
 	}
 	
 	/**
-	 * Gets flashMessage.
+	 * Indicates whether this API message is flash.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean getFlashMessage() {
 		return this.flashMessage;
 	}
 	
 	/**
-	 * Gets from.
+	 * Gets the sender of this API message.
+	 *
+	 * @return the sender.
 	 */
 	public String getFrom() {
 		return this.from;
 	}
 	
 	/**
-	 * Gets messageId.
+	 * Gets the ID of this API message.
+	 *
+	 * @return the ID.
 	 */
 	public UUID getMessageId() {
 		return this.messageId;
 	}
 	
 	/**
-	 * Gets networkId.
+	 * Gets the network ID of this API message.
+	 *
+	 * @return the network ID.
 	 */
 	public String getNetworkId() {
 		return this.networkId;
 	}
 	
 	/**
-	 * Gets rate.
+	 * Gets the rate of this API message.
+	 *
+	 * @return the rate.
 	 */
 	public double getRate() {
 		return this.rate;
 	}
 	
 	/**
-	 * Gets registeredDelivery.
+	 * Indicates whether this API message is registered delivery.
+	 *
+	 * @return the boolean state.
 	 */
 	public boolean getRegisteredDelivery() {
 		return this.registeredDelivery;
 	}
 	
 	/**
-	 * Gets status.
+	 * Gets the status of this API message.
+	 *
+	 * @return the status.
 	 */
 	public String getStatus() {
 		return this.status;
 	}
 	
 	/**
-	 * Gets time.
+	 * Gets the time of this API message.
+	 *
+	 * @return the time.
 	 */
 	public Date getTime() {
 		return this.time;
 	}
 	
 	/**
-	 * Gets to.
+	 * Gets the recipient of this API message.
+	 *
+	 * @return the recipient.
 	 */
 	public String getTo() {
 		return this.to;
 	}
 	
 	/**
-	 * Gets udh.
+	 * Gets the UDH of this API message.
+	 *
+	 * @return the UDH.
 	 */
 	public String getUdh() {
 		return this.udh;
 	}
 	
 	/**
-	 * Gets units.
+	 * Gets the units of this API message.
+	 *
+	 * @return the units.
 	 */
 	public double getUnits() {
 		return this.units;
 	}
 	
 	/**
-	 * Gets updateTime.
+	 * Gets the update time of this API message.
+	 *
+	 * @return the update time.
 	 */
 	public Date getUpdateTime() {
 		return this.updateTime;
 	}
 	
 	/**
-	 * Sets apiMessageType.
+	 * Sets the API message type of this API message.
+	 *
+	 * @param value  the API message type.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setApiMessageType(int value) {
 		this.apiMessageType = value;
@@ -215,7 +253,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets clientReference.
+	 * Sets the client reference of this API message.
+	 *
+	 * @param value  the client reference.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setClientReference(String value) {
 		this.clientReference = value;
@@ -223,7 +264,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets content.
+	 * Sets the content of this API message.
+	 *
+	 * @param value  the content.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setContent(String value) {
 		this.content = value;
@@ -231,7 +275,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets flashMessage.
+	 * Sets a value indicating whether this API message is flash.
+	 *
+	 * @param value  the boolean state.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setFlashMessage(boolean value) {
 		this.flashMessage = value;
@@ -239,7 +286,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets from.
+	 * Sets the sender of this API message.
+	 *
+	 * @param value  the sender.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setFrom(String value) {
 		this.from = value;
@@ -247,7 +297,11 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets registeredDelivery.
+	 * Sets a value indicating whether this API message is registered
+	 * delivery.
+	 *
+	 * @param value  the boolean state.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setRegisteredDelivery(boolean value) {
 		this.registeredDelivery = value;
@@ -255,7 +309,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets time.
+	 * Sets the time of this API message.
+	 *
+	 * @param value  the time.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setTime(Date value) {
 		this.time = value;
@@ -263,7 +320,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets to.
+	 * Sets the recipient number of this API message.
+	 *
+	 * @param value  the recipient number.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setTo(String value) {
 		this.to = value;
@@ -271,7 +331,10 @@ public class ApiMessage {
 	}
 	
 	/**
-	 * Sets udh.
+	 * Sets the UDH of this API message.
+	 *
+	 * @param value  the UDH.
+	 * @return this instance of API message.
 	 */
 	public ApiMessage setUdh(String value) {
 		this.udh = value;
