@@ -41,6 +41,7 @@ public class SmsghApi {
 	 * @param   clientSecret  API client secret.
 	 */
 	public SmsghApi(String clientId, String clientSecret) {
+		this();
 		this.clientId = clientId;
 		this.clientSecret = clientSecret;
 	}

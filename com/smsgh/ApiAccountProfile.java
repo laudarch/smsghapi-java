@@ -2,6 +2,7 @@
 package com.smsgh;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.math.BigDecimal;
 import com.smsgh.json.JsonObject;
 import com.smsgh.json.JsonValue;
 
@@ -11,19 +12,19 @@ import com.smsgh.json.JsonValue;
  * @author Michael Kwayisi
  */
 public class ApiAccountProfile {
-	private String accountId;
-	private String accountManager;
-	private long   accountNumber;
-	private String accountStatus;
-	private double balance;
-	private String company;
-	private double credit;
-	private String emailAddress;
-	private Date   lastAccessed;
-	private String mobileNumber;
-	private int    numberOfServices;
-	private String primaryContact;
-	private double unpostedBalance;
+	private String     accountId;
+	private String     accountManager;
+	private long       accountNumber;
+	private String     accountStatus;
+	private BigDecimal balance;
+	private String     company;
+	private BigDecimal credit;
+	private String     emailAddress;
+	private Date       lastAccessed;
+	private String     mobileNumber;
+	private int        numberOfServices;
+	private String     primaryContact;
+	private BigDecimal unpostedBalance;
 	
 	/**
 	 * Initializes the data fields of this class from JSON.
@@ -48,13 +49,13 @@ public class ApiAccountProfile {
 					this.accountStatus = val.asString();
 					break;
 				case "balance":
-					this.balance = val.asDouble();
+					this.balance = new BigDecimal(val.toString());
 					break;
 				case "company":
 					this.company = val.asString();
 					break;
 				case "credit":
-					this.credit = val.asDouble();
+					this.credit = new BigDecimal(val.toString());
 					break;
 				case "emailaddress":
 					this.emailAddress = val.asString();
@@ -72,7 +73,7 @@ public class ApiAccountProfile {
 					this.primaryContact = val.asString();
 					break;
 				case "unpostedbalance":
-					this.unpostedBalance = val.asDouble();
+					this.unpostedBalance = new BigDecimal(val.toString());
 					break;
 			}
 		}
@@ -119,7 +120,7 @@ public class ApiAccountProfile {
 	 *
 	 * @return the balance or zero if not set.
 	 */
-	public double getBalance() {
+	public BigDecimal getBalance() {
 		return this.balance;
 	}
 	
@@ -137,7 +138,7 @@ public class ApiAccountProfile {
 	 *
 	 * @return the credit or zero if not set.
 	 */
-	public double getCredit() {
+	public BigDecimal getCredit() {
 		return this.credit;
 	}
 	
@@ -191,7 +192,7 @@ public class ApiAccountProfile {
 	 *
 	 * @return the unposted balance or zero if not set.
 	 */
-	public double getUnpostedBalance() {
+	public BigDecimal getUnpostedBalance() {
 		return this.unpostedBalance;
 	}
 }
