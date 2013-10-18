@@ -118,7 +118,7 @@ public class ApiAccountProfile {
 	/**
 	 * Gets the balance of this API account profile.
 	 *
-	 * @return the balance or zero if not set.
+	 * @return the balance or null if not set.
 	 */
 	public BigDecimal getBalance() {
 		return this.balance;
@@ -136,7 +136,7 @@ public class ApiAccountProfile {
 	/**
 	 * Gets the credit of this API account profile.
 	 *
-	 * @return the credit or zero if not set.
+	 * @return the credit or null if not set.
 	 */
 	public BigDecimal getCredit() {
 		return this.credit;
@@ -190,7 +190,7 @@ public class ApiAccountProfile {
 	/**
 	 * Gets the unposted balance of this API account profile.
 	 *
-	 * @return the unposted balance or zero if not set.
+	 * @return the unposted balance or null if not set.
 	 */
 	public BigDecimal getUnpostedBalance() {
 		return this.unpostedBalance;
