@@ -1,4 +1,3 @@
-// $Id: ApiPremiumResource.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 import com.smsgh.json.JsonObject;
 
@@ -459,6 +458,25 @@ public class ApiPremiumResource {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost,
 				"POST", "/v3/campaigns/" + campaignId + "/actions/smpp",
 					new JsonObject().add("app_id", appId).toString()));
+		} catch (Exception ex) {
+			throw new ApiException(ex.getMessage());
+		}
+	}
+	
+	/**
+	 * Removes an action from a campaign.
+	 *
+	 * @param  campaignId  ID of the campaign to remove the action from.
+	 * @param  actionId    ID of the action to remove from campaign.
+	 * @return instance of ApiCampaign representing the API campaign
+	 *         the action was removed from.
+	 * @throws ApiException if an error occurs.
+	 */
+	public ApiCampaign removeActionFromCampaign
+		(long campaignId, long actionId) throws ApiException {
+		try {
+			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "DELETE",
+				"/v3/campaigns/" + campaignId + "/actions/" + actionId, null));
 		} catch (Exception ex) {
 			throw new ApiException(ex.getMessage());
 		}

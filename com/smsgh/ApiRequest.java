@@ -1,4 +1,3 @@
-// $Id: ApiRequest.java 225 2013-08-29 11:29:43Z mkwayisi $
 package com.smsgh;
 
 import java.util.ArrayList;
@@ -69,8 +68,8 @@ public class ApiRequest {
 	}
 	
 	/**
-	 * Opens a connection. This method only instanciate a new object
-	 * if there's not connection or invalid. So it's safe to call
+	 * Opens a connection. This method only instantiate a new object
+	 * if there's no connection or invalid. So it's safe to call
 	 * multiple times.
 	 */
 	private void open() throws Exception {
@@ -235,7 +234,7 @@ public class ApiRequest {
 		
 		// Start buffering the request data.
 		buffer.append(this.method).append(" ")
-			.append(this.uri).append(" HTTP/1.1\r\n");
+			.append(this.uri).append(" HTTP/1.0\r\n");
 			
 		// Append all headers to the buffer.
 		for (AbstractMap.SimpleEntry header : this.headers)
