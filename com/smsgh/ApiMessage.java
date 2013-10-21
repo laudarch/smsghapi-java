@@ -1,4 +1,3 @@
-// $Id: ApiMessage.java 222 2013-08-27 10:07:18Z mkwayisi $
 package com.smsgh;
 import java.util.Date;
 import java.util.UUID;
@@ -12,7 +11,7 @@ import com.smsgh.json.JsonObject;
  * @author Michael Kwayisi
  */
 public class ApiMessage {
-	private int     apiMessageType = -1;
+	private int     apiMessageType;
 	private String  clientReference;
 	private String  content;
 	private String  direction;

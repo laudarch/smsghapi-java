@@ -1,6 +1,7 @@
 // $Id: ApiService.java 0 1970-01-01 00:00:00Z mkwayisi $
 package com.smsgh;
 import java.util.Date;
+import java.math.BigDecimal;
 import com.smsgh.json.JsonValue;
 import com.smsgh.json.JsonObject;
 
@@ -10,17 +11,17 @@ import com.smsgh.json.JsonObject;
  * @author Michael Kwayisi
  */
 public class ApiService {
-	private String  accountId;
-	private Date    billDate;
-	private long    billingCycleId;
-	private Date    dateCreated;
-	private String  description;
-	private boolean isCreditBased;
-	private boolean isPrepaid;
-	private double  rate;
-	private long    serviceId;
-	private long    serviceStatusTypeId;
-	private long    serviceTypeId;
+	private String     accountId;
+	private Date       billDate;
+	private long       billingCycleId;
+	private Date       dateCreated;
+	private String     description;
+	private boolean    isCreditBased;
+	private boolean    isPrepaid;
+	private BigDecimal rate;
+	private long       serviceId;
+	private long       serviceStatusTypeId;
+	private long       serviceTypeId;
 	
 	/**
 	 * Used internally to initialize the data fields of this instance.
@@ -54,7 +55,7 @@ public class ApiService {
 					this.isPrepaid = val.asBoolean();
 					break;
 				case "rate":
-					this.rate = val.asDouble();
+					this.rate = new BigDecimal(val.toString());
 					break;
 				case "serviceid":
 					this.serviceId = val.asLong();
@@ -137,7 +138,7 @@ public class ApiService {
 	 *
 	 * @return the rate.
 	 */
-	public double getRate() {
+	public BigDecimal getRate() {
 		return this.rate;
 	}
 	
