@@ -181,30 +181,6 @@ public class ApiAccountResource {
 		}
 	}
 	
-	/**
-	 * Retrieves all API child accounts.
-	 *
-	 * @return an API list of API child account.
-	 * @throws ApiException if an error occurs.
-	 */
-	public ApiList<ApiChildAccount> getChildAccounts()
-		throws ApiException {
-		return getChildAccounts(-1, -1);
-	}
-	
-	/**
-	 * Retrieves API child accounts by page and page size.
-	 *
-	 * @param  page     one-based index of the page to query.
-	 * @param  pageSize maximum number of entries in a page.
-	 * @return an API list of API child accounts.
-	 * @throws ApiException if an error occurs.
-	 */
-	public ApiList<ApiChildAccount> getChildAccounts
-		(int page, int pageSize) throws ApiException {
-		return ApiHelper.getApiList(ApiChildAccount.class,
-			this.smsghApi, "/v3/account/childaccounts", page, pageSize);
-	}
 	
 	/**
 	 * Retrieves all API account invoices.
