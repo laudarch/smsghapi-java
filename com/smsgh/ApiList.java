@@ -45,11 +45,6 @@ public class ApiList<T> implements Iterable<T> {
 						this.items.add((T) new ApiCampaign(o.asObject()));
 					break;
 					
-				case "childaccountlist":
-					for (JsonValue o : val.asArray())
-						this.items.add((T) new ApiChildAccount(o.asObject()));
-					break;
-					
 				case "contactlist":
 					for (JsonValue o : val.asArray())
 						this.items.add((T) new ApiContact(o.asObject()));
