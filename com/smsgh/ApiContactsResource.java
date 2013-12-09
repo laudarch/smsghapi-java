@@ -103,7 +103,7 @@ public class ApiContactsResource {
 	 * @return instance of ApiContact representing the queried contact.
 	 * @throws ApiException if an error occurs.
 	 */
-	public ApiContact get(String number) throws ApiException {
+/*	public ApiContact get(String number) throws ApiException {
 		try {
 			if (number == null)
 				throw new NullPointerException("number");
@@ -116,7 +116,7 @@ public class ApiContactsResource {
 		} catch (Exception ex) {
 			throw new ApiException(ex.getMessage());
 		}
-	}
+	}*/
 
 	/**
 	 * Creates a new contact.

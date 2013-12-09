@@ -86,6 +86,11 @@ public class ApiList<T> implements Iterable<T> {
 				for (JsonValue o : val.asArray())
 					this.items.add((T) new ApiService(o.asObject()));
 				break;
+				
+			case "ticketlist":
+				for (JsonValue o : val.asArray())
+					this.items.add((T) new ApiTicket(o.asObject()));
+				break;				
 			}
 		}
 	}

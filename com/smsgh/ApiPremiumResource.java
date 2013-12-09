@@ -42,8 +42,10 @@ public class ApiPremiumResource {
 			uri = "/numberplans/";
 		else
 			uri = "/" + this.apiHost.getVersion() + "/numberplans/";
-		if (type >= 0)
+		if (type >= 0){
 			uri += "?Type=" + type;
+			return ApiHelper.getApiList(ApiNumberPlan.class, this.apiHost, uri, page, pageSize, true);
+		}
 		return ApiHelper.getApiList(ApiNumberPlan.class, this.apiHost, uri, page, pageSize);
 	}
 
@@ -128,6 +130,24 @@ public class ApiPremiumResource {
 		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost, uri, page, pageSize);
 	}
 
+	/**
+	 * Get Campaign keywords
+	 * @param numberPlanId
+	 * @param page
+	 * @param pageSize
+	 * @return  API list of MO keywords.
+	 * @throws ApiException
+	 */
+	public ApiList<ApiMoKeyWord> getCampaignKeyWords(long campaignId, int page, int pageSize) throws ApiException {
+		String uri = null;
+		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+			uri = "/campaigns/" + campaignId + "/keywords/";
+		else
+			uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/keywords/";
+
+		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost, uri, page, pageSize);
+	}
+	
 	/**
 	 * Retrieves all campaigns.
 	 * 
@@ -346,6 +366,19 @@ public class ApiPremiumResource {
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
 	}
 
+	/**
+	 *  Get keyword By id
+	 * @param keywordId
+	 * @return
+	 * @throws ApiException
+	 */
+	public ApiMoKeyWord getKeyword(long keywordId) throws ApiException {
+		String uri = "/" + this.apiHost.getVersion() + "/keywords/" + keywordId;
+		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+			uri = "/keywords/" + keywordId;
+		return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost, "GET", uri, null));
+	}	
+	
 	/**
 	 * Adds an MO keyword to campaign.
 	 * 

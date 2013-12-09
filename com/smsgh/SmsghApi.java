@@ -18,6 +18,7 @@ public class SmsghApi {
 	private ApiMessagesResource messagesResource;
 	private ApiPremiumResource premiumResource;
 	private ApiBulkMessagingResource bulkMessagingResource;
+	private ApiTicketsResource ticketResource;
 	private String version;
 
 	/**
@@ -33,6 +34,7 @@ public class SmsghApi {
 		this.contactsResource = new ApiContactsResource(this);
 		this.premiumResource = new ApiPremiumResource(this);
 		this.bulkMessagingResource = new ApiBulkMessagingResource(this);
+		this.ticketResource = new ApiTicketsResource(this);
 		this.setVersion(null);
 	}
 
@@ -223,5 +225,9 @@ public class SmsghApi {
 
 	public void setVersion(String apiVersion) {
 		this.version = apiVersion;
+	}
+
+	public ApiTicketsResource getTicketResource() {
+		return ticketResource;
 	}
 }
