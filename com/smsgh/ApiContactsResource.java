@@ -63,8 +63,8 @@ public class ApiContactsResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContact> get(int page, int pageSize, long groupId, String filter) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/contacts/";
 		if (groupId > 0)
 			uri += "?GroupId=" + groupId;
@@ -85,8 +85,8 @@ public class ApiContactsResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiContact get(long contactId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/contacts/";
 		
 		try {
@@ -130,8 +130,8 @@ public class ApiContactsResource {
 			if (apiContact == null)
 				throw new NullPointerException("apiContact");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/contacts/";
 			
 			return new ApiContact(ApiHelper.getJson(this.apiHost, "POST", uri, apiContact.toJson()));
@@ -150,8 +150,8 @@ public class ApiContactsResource {
 		try {
 			if (apiContact == null)
 				throw new NullPointerException("apiContact");
-			String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/contacts/";
 			
 			ApiHelper.getJson(this.apiHost, "PUT", uri + apiContact.getContactId(), apiContact.toJson());
@@ -167,8 +167,8 @@ public class ApiContactsResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteContact(long contactId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/contacts/";
 		
 		ApiHelper.getData(this.apiHost, "DELETE", uri + contactId, null);
@@ -193,8 +193,8 @@ public class ApiContactsResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiContactGroup> getGroups(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/contacts/";
 		
 		return ApiHelper.getApiList(ApiContactGroup.class, this.apiHost,  uri + "groups/", page, pageSize);
@@ -209,8 +209,8 @@ public class ApiContactsResource {
 	 */
 	public ApiContactGroup getGroup(long groupId) throws ApiException {
 		try {
-			String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/contacts/";
 			
 			return new ApiContactGroup(ApiHelper.getJson(this.apiHost, "GET",  uri + "groups/" + groupId, null));
@@ -230,8 +230,8 @@ public class ApiContactsResource {
 		try {
 			if (apiContactGroup == null)
 				throw new NullPointerException("apiContactGroup");
-			String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/contacts/";
 			
 			return new ApiContactGroup(ApiHelper.getJson(this.apiHost, "POST",  uri+ "groups/", apiContactGroup.toJson()));
@@ -250,8 +250,8 @@ public class ApiContactsResource {
 		try {
 			if (apiContactGroup == null)
 				throw new NullPointerException("apiContactGroup");
-			String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/contacts/";
 			
 			ApiHelper.getJson(this.apiHost, "PUT", uri + "groups/" + apiContactGroup.getGroupId(), apiContactGroup.toJson());
@@ -267,8 +267,8 @@ public class ApiContactsResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteGroup(long groupId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/contacts/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/contacts/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/contacts/";
 		
 		ApiHelper.getData(this.apiHost, "DELETE",  uri + "groups/" + groupId, null);

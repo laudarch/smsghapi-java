@@ -38,10 +38,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiList<ApiNumberPlan> getNumberPlans(int page, int pageSize, int type) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/numberplans/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/numberplans/";
+			uri = "/" + this.apiHost.getContextPath() + "/numberplans/";
 		if (type >= 0){
 			uri += "?Type=" + type;
 			return ApiHelper.getApiList(ApiNumberPlan.class, this.apiHost, uri, page, pageSize, true);
@@ -122,10 +122,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiList<ApiMoKeyWord> getNumberPlanKeyWords(long numberPlanId, int page, int pageSize) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/numberplans/" + numberPlanId + "/keywords/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/numberplans/" + numberPlanId + "/keywords/";
+			uri = "/" + this.apiHost.getContextPath() + "/numberplans/" + numberPlanId + "/keywords/";
 
 		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost, uri, page, pageSize);
 	}
@@ -140,10 +140,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiList<ApiMoKeyWord> getCampaignKeyWords(long campaignId, int page, int pageSize) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/keywords/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/keywords/";
+			uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/keywords/";
 
 		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost, uri, page, pageSize);
 	}
@@ -168,10 +168,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiList<ApiCampaign> getCampaigns(int page, int pageSize) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/campaigns/";
+			uri = "/" + this.apiHost.getContextPath() + "/campaigns/";
 		return ApiHelper.getApiList(ApiCampaign.class, this.apiHost, uri, page, pageSize);
 	}
 
@@ -184,10 +184,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiCampaign getCampaign(long campaignId) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId;
 		else
-			uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId;
+			uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId;
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "GET", uri, null));
 		} catch (Exception ex) {
@@ -203,10 +203,10 @@ public class ApiPremiumResource {
 	 */
 	public ApiNumberPlan getNumberPlan(long numberPlanId) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/numberplans/" + numberPlanId;
 		else
-			uri = "/" + this.apiHost.getVersion() + "/numberplans/" + numberPlanId;
+			uri = "/" + this.apiHost.getContextPath() + "/numberplans/" + numberPlanId;
 
 		try {
 			return new ApiNumberPlan(ApiHelper.getJson(this.apiHost, "GET", uri, null));
@@ -222,8 +222,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException
 	 */
 	public ApiMoKeyWord getKeywordById(long keywordId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/keywords/" + keywordId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords/" + keywordId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords/" + keywordId;
 
 		try {
@@ -241,8 +241,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign create(ApiCampaign apiCampaign) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/";
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/";
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/";
 		try {
 			if (apiCampaign == null)
@@ -263,8 +263,8 @@ public class ApiPremiumResource {
 	public ApiCampaign update(ApiCampaign apiCampaign) throws ApiException {
 		if (apiCampaign == null)
 			throw new NullPointerException("apiCampaign");
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + apiCampaign.getCampaignId();
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + apiCampaign.getCampaignId();
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + apiCampaign.getCampaignId();
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "PUT", uri, apiCampaign.toJson()));
@@ -280,8 +280,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteCampaign(long campaignId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId;
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
 	}
@@ -305,8 +305,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiMoKeyWord> getKeyWords(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/keywords/";
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords/";
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords/";
 		return ApiHelper.getApiList(ApiMoKeyWord.class, this.apiHost, uri, page, pageSize);
 	}
@@ -322,8 +322,8 @@ public class ApiPremiumResource {
 		if (apiMoKeyWord == null)
 			throw new NullPointerException("apiMoKeyWord");
 
-		String uri = "/" + this.apiHost.getVersion() + "/keywords";
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords";
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords";
 		try {
 			return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost, "POST", uri, apiMoKeyWord.toJson()));
@@ -343,8 +343,8 @@ public class ApiPremiumResource {
 		if (apiMoKeyWord == null)
 			throw new NullPointerException("apiMoKeyWord");
 
-		String uri = "/" + this.apiHost.getVersion() + "/keywords/" + apiMoKeyWord.getId();
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords/" + apiMoKeyWord.getId();
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords/" + apiMoKeyWord.getId();
 		try {
 			return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost, "PUT", uri, apiMoKeyWord.toJson()));
@@ -360,8 +360,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteKeyword(long keywordId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/keywords/" + keywordId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords/" + keywordId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords/" + keywordId;
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
 	}
@@ -373,8 +373,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException
 	 */
 	public ApiMoKeyWord getKeyword(long keywordId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/keywords/" + keywordId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/keywords/" + keywordId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/keywords/" + keywordId;
 		return new ApiMoKeyWord(ApiHelper.getJson(this.apiHost, "GET", uri, null));
 	}	
@@ -389,8 +389,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addKeywordToCampaign(long campaignId, long keywordId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/keywords/" + keywordId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/keywords/" + keywordId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/keywords/" + keywordId;
 
 		try {
@@ -408,8 +408,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void removeKeywordFromCampaign(long campaignId, long keywordId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/keywords/" + keywordId;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/keywords/" + keywordId;
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/keywords/" + keywordId;
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
 	}
@@ -435,8 +435,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiAction> getActions(long campaignId, int page, int pageSize) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions";
-		if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions";
+		if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions";
 		return ApiHelper.getApiList(ApiAction.class, this.apiHost, uri, page, pageSize);
 	}
@@ -451,8 +451,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addDefaultReplyAction(long campaignId, String message) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/default_reply";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/default_reply";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/default_reply";
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "POST", uri, new JsonObject().add("message", message).toString()));
@@ -485,8 +485,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addDynamicUrlAction(long campaignId, String url, String sendResponse) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/dynamic_url";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/dynamic_url";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/dynamic_url";
 		
 		try {
@@ -506,8 +506,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addEmailAddressAction(long campaignId, String address) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/email";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/email";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/email";
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "POST", uri, new JsonObject().add("address", address).toString()));
@@ -526,8 +526,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addForwardToMobileAction(long campaignId, String number) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/phone";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/phone";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/phone";
 		
 		try {
@@ -547,8 +547,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign addForwardToSmppAction(long campaignId, String appId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/smpp";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/smpp";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/smpp";
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "POST", uri, new JsonObject().add("api_id", appId).toString()));
@@ -567,8 +567,8 @@ public class ApiPremiumResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiCampaign removeActionFromCampaign(long campaignId, long actionId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/campaigns/" + campaignId + "/actions/" + actionId;
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/campaigns/" + campaignId + "/actions/" + actionId;
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/campaigns/" + campaignId + "/actions/" + actionId;
 		try {
 			return new ApiCampaign(ApiHelper.getJson(this.apiHost, "DELETE", uri, null));

@@ -48,8 +48,8 @@ public class ApiMessagesResource {
 		try {
 			if (apiMessage == null)
 				throw new NullPointerException("apiMessage");
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			return new ApiMessageResponse(ApiHelper.getJson(this.apiHost, "POST", uri, apiMessage.toJson()));
 		} catch (Exception ex) {
@@ -86,8 +86,8 @@ public class ApiMessagesResource {
 			if (time == null)
 				throw new NullPointerException("time");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessageResponse(ApiHelper.getJson(this.apiHost, "PUT", uri + messageId.toString().replace("-", ""), new JsonObject().add("Time", time).toString()));
@@ -111,8 +111,8 @@ public class ApiMessagesResource {
 			if (time == null)
 				throw new NullPointerException("time");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessageResponse(ApiHelper.getJson(this.apiHost, "PUT", uri + messageId, new JsonObject().add("Time", time).toString()));
@@ -133,8 +133,8 @@ public class ApiMessagesResource {
 			if (messageId == null)
 				throw new NullPointerException("messageId");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessageResponse(ApiHelper.getJson(this.apiHost, "DELETE", uri + messageId.toString().replace("-", ""), null));
@@ -156,8 +156,8 @@ public class ApiMessagesResource {
 			if (messageId == null)
 				throw new NullPointerException("messageId");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessageResponse(ApiHelper.getJson(this.apiHost, "DELETE", uri + messageId, null));
@@ -177,8 +177,8 @@ public class ApiMessagesResource {
 			if (messageId == null)
 				throw new NullPointerException("messageId");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessage(ApiHelper.getJson(this.apiHost, "GET", uri + messageId.toString().replace("-", ""), null));
@@ -199,8 +199,8 @@ public class ApiMessagesResource {
 			if (messageId == null || messageId.length() == 0)
 				throw new NullPointerException("messageId");
 			
-			String uri = "/" + this.apiHost.getVersion() + "/messages/";
-			if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+			if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/messages/";
 			
 			return new ApiMessage(ApiHelper.getJson(this.apiHost, "GET", uri + messageId, null));
@@ -224,8 +224,8 @@ public class ApiMessagesResource {
 	public ApiList<ApiMessage> get(Date start, Date end, int index, int limit, boolean pending, String direction) throws ApiException {
 		boolean hasQ = false;
 		StringBuilder sb = new StringBuilder();
-		String uri = "/" + this.apiHost.getVersion() + "/messages/";
-		if(apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/messages/";
+		if(apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/messages/";
 		
 		sb.append(uri);

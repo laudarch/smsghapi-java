@@ -30,8 +30,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiAccountProfile getProfile() throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/profile";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/profile";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/profile";
 		try {
 			return new ApiAccountProfile(ApiHelper.getJson(this.smsghApi, "GET", uri, null));
@@ -47,8 +47,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiAccountContact getPrimaryContact() throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/primary_contact";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/primary_contact";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/primary_contact";
 		try {
 			return new ApiAccountContact(ApiHelper.getJson(this.smsghApi, "GET", uri, null));
@@ -64,8 +64,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiAccountContact getBillingContact() throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/billing_contact";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/billing_contact";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/billing_contact";
 		
 		try {
@@ -82,8 +82,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiAccountContact getTechnicalContact() throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/technical_contact";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/technical_contact";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/technical_contact";
 		
 		try {
@@ -101,8 +101,8 @@ public class ApiAccountResource {
 	 */
 	public List<ApiAccountContact> getContacts() throws ApiException {
 		List<ApiAccountContact> aacs = new ArrayList<ApiAccountContact>(3);
-		String uri = "/" + this.smsghApi.getVersion() + "/account/contacts";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/contacts";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/contacts";
 		
 		try {
@@ -125,8 +125,8 @@ public class ApiAccountResource {
 			if (apiAccountContact == null)
 				throw new NullPointerException("apiAccountContact");
 			
-			String uri =  "/" + this.smsghApi.getVersion() + "/account/contacts/" + apiAccountContact.getAccountContactId();
-			if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+			String uri =  "/" + this.smsghApi.getContextPath() + "/account/contacts/" + apiAccountContact.getAccountContactId();
+			if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 				uri = "/account/contacts/" + apiAccountContact.getAccountContactId();
 			ApiHelper.getData(this.smsghApi, "PUT", uri, apiAccountContact.toJson());
 		} catch (Exception ex) {
@@ -153,8 +153,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiService> getServices(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/services";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/services";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/services";
 
 		return ApiHelper.getApiList(ApiService.class, this.smsghApi, uri, page, pageSize);
@@ -167,8 +167,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiSettings getSettings() throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/settings";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/settings";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/settings";
 		
 		try {
@@ -186,8 +186,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiSettings update(ApiSettings apiSettings) throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/settings";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/settings";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/settings";
 		
 		try {
@@ -240,8 +240,8 @@ public class ApiAccountResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiInvoice> getInvoices(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.smsghApi.getVersion() + "/account/invoices";
-		if(smsghApi.getVersion() == null || smsghApi.getVersion().length() == 0)
+		String uri = "/" + this.smsghApi.getContextPath() + "/account/invoices";
+		if(smsghApi.getContextPath() == null || smsghApi.getContextPath().length() == 0)
 			uri = "/account/invoices";
 		
 		return ApiHelper.getApiList(ApiInvoice.class, this.smsghApi, uri, page, pageSize);

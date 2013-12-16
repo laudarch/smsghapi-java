@@ -35,8 +35,8 @@ public class ApiBulkMessagingResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiSender> getSenders(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/senders";
-		if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/senders";
+		if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/senders";
 		return ApiHelper.getApiList(ApiSender.class, this.apiHost, uri, page, pageSize);
 	}
@@ -50,8 +50,8 @@ public class ApiBulkMessagingResource {
 	 */
 	public ApiSender getSender(long senderId) throws ApiException {
 		try {
-			String uri = "/" + this.apiHost.getVersion() + "/senders/" + senderId;
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/senders/" + senderId;
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/senders/" + senderId;
 
 			return new ApiSender(ApiHelper.getJson(this.apiHost, "GET", uri, null));
@@ -72,8 +72,8 @@ public class ApiBulkMessagingResource {
 			if (apiSender == null)
 				throw new NullPointerException("apiSender");
 
-			String uri = "/" + this.apiHost.getVersion() + "/senders";
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/senders";
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/senders";
 
 			return new ApiSender(ApiHelper.getJson(this.apiHost, "POST", uri, apiSender.toJson()));
@@ -93,8 +93,8 @@ public class ApiBulkMessagingResource {
 		try {
 			if (apiSender == null)
 				throw new NullPointerException("apiSender");
-			String uri = "/" + this.apiHost.getVersion() + "/senders/" + apiSender.getId();
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/senders/" + apiSender.getId();
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/senders/" + apiSender.getId();
 
 			return new ApiSender(ApiHelper.getJson(this.apiHost, "PUT", uri, apiSender.toJson()));
@@ -110,8 +110,8 @@ public class ApiBulkMessagingResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteSender(long senderId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/senders/" + senderId;
-		if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/senders/" + senderId;
+		if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/senders/" + senderId;
 
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
@@ -136,8 +136,8 @@ public class ApiBulkMessagingResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public ApiList<ApiTemplate> getTemplates(int page, int pageSize) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/templates";
-		if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/templates";
+		if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/templates";
 
 		return ApiHelper.getApiList(ApiTemplate.class, this.apiHost, uri, page, pageSize);
@@ -152,8 +152,8 @@ public class ApiBulkMessagingResource {
 	 */
 	public ApiTemplate getTemplate(long templateId) throws ApiException {
 		try {
-			String uri = "/" + this.apiHost.getVersion() + "/templates/" + templateId;
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/templates/" + templateId;
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/templates/" + templateId;
 
 			return new ApiTemplate(ApiHelper.getJson(this.apiHost, "GET", uri, null));
@@ -174,8 +174,8 @@ public class ApiBulkMessagingResource {
 			if (apiTemplate == null)
 				throw new NullPointerException("apiTemplate");
 
-			String uri = "/" + this.apiHost.getVersion() + "/templates";
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/templates";
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/templates";
 
 			return new ApiTemplate(ApiHelper.getJson(this.apiHost, "POST", uri, apiTemplate.toJson()));
@@ -196,8 +196,8 @@ public class ApiBulkMessagingResource {
 			if (apiTemplate == null)
 				throw new NullPointerException("apiTemplate");
 
-			String uri = "/" + this.apiHost.getVersion() + "/templates/" + apiTemplate.getId();
-			if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+			String uri = "/" + this.apiHost.getContextPath() + "/templates/" + apiTemplate.getId();
+			if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 				uri = "/templates/" + apiTemplate.getId();
 			return new ApiTemplate(ApiHelper.getJson(this.apiHost, "PUT", uri, apiTemplate.toJson()));
 		} catch (Exception ex) {
@@ -212,8 +212,8 @@ public class ApiBulkMessagingResource {
 	 * @throws ApiException if an error occurs.
 	 */
 	public void deleteTemplate(long templateId) throws ApiException {
-		String uri = "/" + this.apiHost.getVersion() + "/templates/" + templateId;
-		if (apiHost.getVersion() == null || apiHost.getVersion().length() == 0)
+		String uri = "/" + this.apiHost.getContextPath() + "/templates/" + templateId;
+		if (apiHost.getContextPath() == null || apiHost.getContextPath().length() == 0)
 			uri = "/templates/" + templateId;
 		ApiHelper.getData(this.apiHost, "DELETE", uri, null);
 	}

@@ -28,10 +28,10 @@ public class ApiTicketsResource {
 	 */
 	public ApiList<ApiTicket> getTickets(int page, int pageSize) throws ApiException {
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/tickets/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/tickets/";
+			uri = "/" + this.apiHost.getContextPath() + "/tickets/";
 		return ApiHelper.getApiList(ApiTicket.class, this.apiHost, uri, page, pageSize);
 	}
 
@@ -55,10 +55,10 @@ public class ApiTicketsResource {
 		if(ticket == null)
 			throw new NullPointerException("ticket");
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/tickets/";
 		else
-			uri = "/" + this.apiHost.getVersion() + "/tickets/";
+			uri = "/" + this.apiHost.getContextPath() + "/tickets/";
 		try {
 			return new ApiTicket(ApiHelper.getJson(this.apiHost, "POST", uri, ticket.toJson()));
 		} catch (Exception ex) {
@@ -77,10 +77,10 @@ public class ApiTicketsResource {
 		if(reply == null)
 			throw new NullPointerException("reply");
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/tickets/" + ticketId;
 		else
-			uri = "/" + this.apiHost.getVersion() + "/tickets/" + ticketId;
+			uri = "/" + this.apiHost.getContextPath() + "/tickets/" + ticketId;
 		try {
 			return new ApiTicket(ApiHelper.getJson(this.apiHost, "PUT", uri, reply.toJson()));
 		} catch (Exception ex) {
@@ -96,10 +96,10 @@ public class ApiTicketsResource {
 	 */
 	public ApiTicket getTicket(long ticketId) throws ApiException{
 		String uri = null;
-		if (this.apiHost.getVersion() == null || this.apiHost.getVersion().length() == 0)
+		if (this.apiHost.getContextPath() == null || this.apiHost.getContextPath().length() == 0)
 			uri = "/tickets/" + ticketId;
 		else
-			uri = "/" + this.apiHost.getVersion() + "/tickets/" + ticketId;
+			uri = "/" + this.apiHost.getContextPath() + "/tickets/" + ticketId;
 		try {
 			return new ApiTicket(ApiHelper.getJson(this.apiHost, "GET", uri, null));
 		} catch (Exception ex) {

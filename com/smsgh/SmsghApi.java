@@ -19,7 +19,7 @@ public class SmsghApi {
 	private ApiPremiumResource premiumResource;
 	private ApiBulkMessagingResource bulkMessagingResource;
 	private ApiTicketsResource ticketResource;
-	private String version;
+	private String contextPath;
 
 	/**
 	 * Primary constructor.
@@ -35,7 +35,7 @@ public class SmsghApi {
 		this.premiumResource = new ApiPremiumResource(this);
 		this.bulkMessagingResource = new ApiBulkMessagingResource(this);
 		this.ticketResource = new ApiTicketsResource(this);
-		this.setVersion(null);
+		this.setContextPath(null);
 	}
 
 	/**
@@ -219,12 +219,12 @@ public class SmsghApi {
 		return this;
 	}
 
-	public String getVersion() {
-		return version;
+	public String getContextPath() {
+		return contextPath;
 	}
 
-	public void setVersion(String apiVersion) {
-		this.version = apiVersion;
+	public void setContextPath(String contextPath) {
+		this.contextPath = contextPath;
 	}
 
 	public ApiTicketsResource getTicketResource() {
