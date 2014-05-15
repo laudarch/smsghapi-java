@@ -3,59 +3,80 @@ package com.smsgh;
 
 import com.smsgh.json.JsonArray;
 import com.smsgh.json.JsonObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ApiHelper {
-	/**
-	 * Constructor.
-	 */
-	private ApiHelper() {}
 
-	/**
-	 * getData
-	 */
-	public static String getData(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
-		ApiResponse apiResponse = new ApiRequest(apiHost.getHostname(), apiHost.getPort(), apiHost.isHttps() ? "ssl" : "tcp", apiHost.getTimeout(), apiHost.getClientId(), apiHost.getClientSecret()).setMethod(method).setUri(uri).setHeader("Accept", "application/json").setHeader("Content-Type", "application/json").send(data);
-		if (apiResponse.getStatus() > 199 && apiResponse.getStatus() < 300)
-			return apiResponse.getBody();
-		throw new ApiException("Request failed: " + apiResponse.getStatus() + " " + apiResponse.getReason());
-	}
+    /**
+     * Constructor.
+     */
+    private ApiHelper() {
+    }
 
-	/**
-	 * getJson
-	 */
-	public static JsonObject getJson(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
-		return JsonObject.readFrom(getData(apiHost, method, uri, data));
-	}
+    /**
+     * getData
+     */
+    public static String getData(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
+        ApiResponse apiResponse = new ApiRequest(apiHost.getHostname(), apiHost.getPort(), apiHost.isHttps() ? "ssl" : "tcp", apiHost.getTimeout(), apiHost.getClientId(), apiHost.getClientSecret()).setMethod(method).setUri(uri).setHeader("Accept", "application/json").setHeader("Content-Type", "application/json").send(data);
+        if (apiResponse.getStatus() > 199 && apiResponse.getStatus() < 300) {
+            return apiResponse.getBody();
+        }
+        throw new ApiException("Request Failed.", apiResponse.getStatus(), apiResponse.getReason(), null, apiResponse.getBody());
+    }
 
-	/**
-	 * getJsonArray
-	 */
-	public static JsonArray getJsonArray(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
-		return JsonArray.readFrom(getData(apiHost, method, uri, data));
-	}
+    /**
+     * getJson
+     */
+    public static JsonObject getJson(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
+        return JsonObject.readFrom(getData(apiHost, method, uri, data));
+    }
 
-	/**
-	 * getApiList
-	 */
-	public static <T> ApiList<T> getApiList(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize) throws ApiException {
-		return getApiList(clazz, apiHost, uri, page, pageSize, false);
-	}
+    /**
+     * getJsonArray
+     */
+    public static JsonArray getJsonArray(SmsghApi apiHost, String method, String uri, String data) throws ApiException {
+        return JsonArray.readFrom(getData(apiHost, method, uri, data));
+    }
 
-	/**
-	 * getApiList
-	 */
-	public static <T> ApiList<T> getApiList(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize, boolean hasQ) throws ApiException {
-		if (page > 0) {
-			uri += (hasQ ? "&" : "?") + "Page=" + page;
-			if (!hasQ)
-				hasQ = true;
-		}
-		if (pageSize > 0)
-			uri += (hasQ ? "&" : "?") + "PageSize=" + pageSize;
-		try {
-			return new ApiList<T>(getJson(apiHost, "GET", uri, null));
-		} catch (Exception ex) {
-			throw new ApiException(ex.getMessage());
-		}
-	}	
+    /**
+     * getApiList
+     */
+    public static <T> ApiList<T> getApiList(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize) throws ApiException {
+        return getApiList(clazz, apiHost, uri, page, pageSize, false);
+    }
+
+    /**
+     * getApiList
+     *
+     * @param <T>
+     * @param clazz
+     * @param apiHost
+     * @param uri
+     * @param page
+     * @param pageSize
+     * @param hasQ
+     * @return
+     * @throws com.smsgh.ApiException
+     */
+    public static <T> ApiList<T> getApiList(Class<T> clazz, SmsghApi apiHost, String uri, int page, int pageSize, boolean hasQ) throws ApiException {
+        if (page > 0) {
+            uri += (hasQ ? "&" : "?") + "Page=" + page;
+            if (!hasQ) {
+                hasQ = true;
+            }
+        }
+        if (pageSize > 0) {
+            uri += (hasQ ? "&" : "?") + "PageSize=" + pageSize;
+        }
+        try {
+            return new ApiList<T>(getJson(apiHost, "GET", uri, null));
+        } catch (Exception ex) {
+            if (ex instanceof ApiException) {
+                throw ex;
+            } else {
+                throw new ApiException(ex.getMessage());
+            }
+        }
+    }
 }

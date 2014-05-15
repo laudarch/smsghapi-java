@@ -6,100 +6,101 @@ import com.smsgh.json.JsonValue;
 
 /**
  * Represents an API service type.
- * 
+ *
  * @author Michael Kwayisi
  */
 public class ApiServiceType {
-	private String descriptor;
-	private boolean isCreditBased;
-	private boolean isPrepaid;
-	private String name;
-	private double rate;
-	private boolean requiresActivation;
 
-	/**
-	 * Used internally to initialize the data fields of this instance.
-	 * 
-	 * @param json guaranteed instance of com.smsgh.json.JsonObject.
-	 */
-	public ApiServiceType(JsonObject json) {
-		JsonValue val;
-		for (String name : json.names()) {
-			val = json.get(name);
-			switch (name.toLowerCase()) {
-			case "descriptor":
-				this.descriptor = val.asString();
-				break;
-			case "iscreditbased":
-				this.isCreditBased = val.asBoolean();
-				break;
-			case "isprepaid":
-				this.isPrepaid = val.asBoolean();
-				break;
-			case "name":
-				this.name = val.asString();
-				break;
-			case "rate":
-				this.rate = val.asDouble();
-				break;
-			case "requiresactivation":
-				this.requiresActivation = val.asBoolean();
-				break;
-			}
-		}
-	}
+    private String descriptor;
+    private boolean isCreditBased;
+    private boolean isPrepaid;
+    private String name;
+    private double rate;
+    private boolean requiresActivation;
 
-	/**
-	 * Gets the descriptor of this API service type.
-	 * 
-	 * @return the descriptor.
-	 */
-	public String getDescriptor() {
-		return this.descriptor;
-	}
+    /**
+     * Used internally to initialize the data fields of this instance.
+     *
+     * @param json guaranteed instance of com.smsgh.json.JsonObject.
+     */
+    public ApiServiceType(JsonObject json) {
+        JsonValue val;
+        for (String name : json.names()) {
+            val = json.get(name);
+            switch (name.toLowerCase()) {
+                case "descriptor":
+                    this.descriptor = val.asString();
+                    break;
+                case "iscreditbased":
+                    this.isCreditBased = val.asBoolean();
+                    break;
+                case "isprepaid":
+                    this.isPrepaid = val.asBoolean();
+                    break;
+                case "name":
+                    this.name = val.asString();
+                    break;
+                case "rate":
+                    this.rate = val.asDouble();
+                    break;
+                case "requiresactivation":
+                    this.requiresActivation = val.asBoolean();
+                    break;
+            }
+        }
+    }
 
-	/**
-	 * Indicates whether this API service type is credit based.
-	 * 
-	 * @return the boolean state.
-	 */
-	public boolean isCreditBased() {
-		return this.isCreditBased;
-	}
+    /**
+     * Gets the descriptor of this API service type.
+     *
+     * @return the descriptor.
+     */
+    public String getDescriptor() {
+        return this.descriptor;
+    }
 
-	/**
-	 * Indicates whether this API service type is prepaid.
-	 * 
-	 * @return the boolean state.
-	 */
-	public boolean isPrepaid() {
-		return this.isPrepaid;
-	}
+    /**
+     * Indicates whether this API service type is credit based.
+     *
+     * @return the boolean state.
+     */
+    public boolean isCreditBased() {
+        return this.isCreditBased;
+    }
 
-	/**
-	 * Gets the name of this API service type.
-	 * 
-	 * @return the name.
-	 */
-	public String getName() {
-		return this.name;
-	}
+    /**
+     * Indicates whether this API service type is prepaid.
+     *
+     * @return the boolean state.
+     */
+    public boolean isPrepaid() {
+        return this.isPrepaid;
+    }
 
-	/**
-	 * Gets the rate of this API service type.
-	 * 
-	 * @return the rate.
-	 */
-	public double getRate() {
-		return this.rate;
-	}
+    /**
+     * Gets the name of this API service type.
+     *
+     * @return the name.
+     */
+    public String getName() {
+        return this.name;
+    }
 
-	/**
-	 * Indicates whether this API service type requires activation.
-	 * 
-	 * @return the boolean state.
-	 */
-	public boolean getRequiresActivation() {
-		return this.requiresActivation;
-	}
+    /**
+     * Gets the rate of this API service type.
+     *
+     * @return the rate.
+     */
+    public double getRate() {
+        return this.rate;
+    }
+
+    /**
+     * Indicates whether this API service type requires activation.
+     *
+     * @return the boolean state.
+     */
+    public boolean getRequiresActivation() {
+        return this.requiresActivation;
+    }
 }

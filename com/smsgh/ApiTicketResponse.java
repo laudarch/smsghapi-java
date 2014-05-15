@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.smsgh;
 
@@ -14,63 +14,63 @@ import com.smsgh.json.JsonValue;
  */
 public class ApiTicketResponse {
 
-	private long id;
-	private Date time;
-	private String content;
-	private String attachment;
-	
-	
-	public ApiTicketResponse(){}
-	/**
-	 * 
-	 */
-	public ApiTicketResponse(JsonObject json) {
-		JsonValue val;
-		for (String name : json.names()) {
-			val = json.get(name);
-			switch (name.toLowerCase()) {
-			case "id":
-				this.id = val.asLong();
-				break;
-			case "time":
-				this.time = val.asDate();
-				break;
-			case "content":
-				this.content = val.asString();
-				break;
-			case "attachment":
-				this.attachment = val.asString();
-				break;
-			}
-		}
-		
-	}
+    private long id;
+    private Date time;
+    private String content;
+    private String attachment;
 
-	public String getContent() {
-		return content;
-	}
+    public ApiTicketResponse() {
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    /**
+     *
+     */
+    public ApiTicketResponse(JsonObject json) {
+        JsonValue val;
+        for (String name : json.names()) {
+            val = json.get(name);
+            switch (name.toLowerCase()) {
+                case "id":
+                    this.id = val.asLong();
+                    break;
+                case "time":
+                    this.time = val.asDate();
+                    break;
+                case "content":
+                    this.content = val.asString();
+                    break;
+                case "attachment":
+                    this.attachment = val.asString();
+                    break;
+            }
+        }
 
+    }
 
-	public long getId() {
-		return id;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public Date getTime() {
-		return time;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	public String getAttachment() {
-		return attachment;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String toJson(){
-		JsonObject json = new JsonObject();
-		json.add("Content", content);
-		return json.toString();
-	}
+    public Date getTime() {
+        return time;
+    }
+
+    public String getAttachment() {
+        return attachment;
+    }
+
+    public String toJson() {
+        JsonObject json = new JsonObject();
+        json.add("Content", content);
+        return json.toString();
+    }
 
 }
