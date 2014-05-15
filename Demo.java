@@ -9,8 +9,8 @@ public class Demo {
     public static void main(String[] args) {
         SmsghApi smsghApi = new SmsghApi();
         smsghApi.setContextPath("v3");
-        smsghApi.setClientId("pitnnmim");
-        smsghApi.setClientSecret("btfdtdze");
+        smsghApi.setClientId("user123");
+        smsghApi.setClientSecret("btfder");
 
         try {
             ApiMessageResponse response = smsghApi.getMessages().send("SMSGH", "+23324818378", "Hello world!");
