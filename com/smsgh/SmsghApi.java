@@ -26,8 +26,8 @@ public class SmsghApi {
 	 */
 	public SmsghApi() {
 		this.hostname = "api.smsgh.com";
-		this.port = 443;
-		this.https = true;
+		this.port = 80;
+		this.https = false;
 		this.timeout = 15;
 		this.accountResource = new ApiAccountResource(this);
 		this.messagesResource = new ApiMessagesResource(this);
