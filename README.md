@@ -1,7 +1,7 @@
-SMSGH Unity API Library
+SMSGH HTTP API Library
 =======================
 
-This is a Java library to interact with the SMSGH Unity HTTP API.
+This is a Java library to interact with the SMSGH HTTP API.
 
 Installation
 ------------
