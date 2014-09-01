@@ -11,6 +11,7 @@ All one needs is to have the basic knowledge about the JAVA language. We mean th
 ## **Notice**
 * This is the source code for the current release.
 * The source code of the previous release can be found [here](https://github.com/smsgh/smsghapi-java/tree/release-1) .
+
 ## **Installation**
 
 The SDK can smoothly run on a platform running **JDK 1.1** and above
