@@ -13,20 +13,16 @@ import java.util.Calendar;
  */
 public class Demo {
 
-    static String hostname = "api.smsgh.local";
-    static String contextPath = "";
-    static int timeout = 0;
-    static int port = -1;
+    static String hostname = "api.smsgh.com";
+    static String contextPath = "v3";
 
     public static void main(String[] args) throws Exception {
 
-        BasicAuth auth = new BasicAuth("hqikydyh", "kakdxpvd");
+        BasicAuth auth = new BasicAuth("user123", "password123");
         ApiHost host = new ApiHost();
         host.setAuthorization(auth);
         host.setHostname(hostname);
         host.setContextPath(contextPath);
-        host.setPort(port);
-        host.setTimeout(timeout);
         host.setSecuredConnection(false);
         host.setConsoleLogEnabled(true);
 
