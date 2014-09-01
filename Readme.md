@@ -3,8 +3,8 @@ SMSGH HTTP API JAVA SDK (Release 2)
 
 ## **Overview**
 
-The SMSGH HTTP API JAVA SDK is a wrapper built to assist java-driven applications developers to interact in a more friendly way with the Unity API.
-Its goal is also to provide an easy way for those who do not have much knowledge about the whole HTTP Restful technology to interact with the Unity API.
+The SMSGH HTTP API JAVA SDK is a wrapper built to assist java-driven applications developers to interact in a more friendly way with the HTTP API.
+Its goal is also to provide an easy way for those who do not have much knowledge about the whole HTTP Restful technology to interact with the HTTP API.
 In that direction there is no need to go and grab a knowledge about HTTP and REST technology. 
 All one needs is to have the basic knowledge about the JAVA language. We mean the basics not advanced knowledge.
 
@@ -14,14 +14,12 @@ All one needs is to have the basic knowledge about the JAVA language. We mean th
 
 ## **Installation**
 
-The SDK can smoothly run on a platform running **JDK 1.1** and above
+The SDK can smoothly run on a platform running **JDK 1.1** and above. There are currently two ways of using it:
  
-To use the SDK all you have to do is to download the **com.smsgh** folder from the repository and all of its contents and add it to your project. Also you can download the source code and build it since it 
-is a netbeans project. 
+* To use the SDK all you have to do is to download the **com.smsgh** folder from the repository and all of its contents and add it to your project. Also you can download the source code and build it with your preferred IDE. 
+* Download the binaries from the **bin** folder, unzip it and add it to your project build path and your are good to go.
 
-
-
-## **Usage**
+## **How-To**
 
 The SDK currently is organized around four main classes:
 
