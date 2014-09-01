@@ -3,7 +3,7 @@ SMSGH HTTP API JAVA SDK (Release 2)
 
 ## **Overview**
 
-The Unity API JAVA SDK is a wrapper built to assist java-driven applications developers to interact in a more friendly way with the Unity API.
+The SMSGH HTTP API JAVA SDK is a wrapper built to assist java-driven applications developers to interact in a more friendly way with the Unity API.
 Its goal is also to provide an easy way for those who do not have much knowledge about the whole HTTP Restful technology to interact with the Unity API.
 In that direction there is no need to go and grab a knowledge about HTTP and REST technology. 
 All one needs is to have the basic knowledge about the JAVA language. We mean the basics not advanced knowledge.
