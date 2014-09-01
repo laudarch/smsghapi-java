@@ -1,4 +1,4 @@
-SMSGH Unity API JAVA SDK (Release 2)
+SMSGH HTTP API JAVA SDK (Release 2)
 ===================================
 
 ## **Overview**
