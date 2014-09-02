@@ -18,13 +18,29 @@ public class Tag {
             val = json.get(name);
             switch (name.toLowerCase()) {
                 case "key":
-                    this.key = val.asString();
+                    this.setKey(val.asString());
                     break;
                 case "value":
-                    this.value = val.asString();
+                    this.setValue(val.asString());
                     break;
             }
 
         }
     }
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
 }

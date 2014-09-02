@@ -1,6 +1,7 @@
 package com.smsgh;
 
 import static com.smsgh.RequestHandler.UTF8;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -15,6 +16,7 @@ import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Map;
 import java.util.TreeMap;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -204,7 +206,6 @@ public abstract class AbstractHttpClient {
      * @param httpRequest
      * @return Response object (may be null if request did not complete)
      */
-    @SuppressWarnings({"BroadCatchBlock", "TooBroadCatch"})
     public HttpResponse execute(HttpRequest httpRequest) {
         HttpResponse httpResponse = null;
         try {
@@ -230,8 +231,8 @@ public abstract class AbstractHttpClient {
      * @return Response object
      * @throws HttpRequestException
      */
-    @SuppressWarnings({"finally", "FinallyDiscardsException", "ThrowFromFinallyBlock"})
-    protected HttpResponse doHttpMethod(String path, HttpMethod httpMethod, String contentType, byte[] content) throws HttpRequestException {
+    @SuppressWarnings("finally")
+	protected HttpResponse doHttpMethod(String path, HttpMethod httpMethod, String contentType, byte[] content) throws HttpRequestException {
 
         HttpURLConnection uc = null;
         HttpResponse httpResponse = null;
@@ -300,8 +301,8 @@ public abstract class AbstractHttpClient {
      * @return Response object (may be null if request did not complete)
      * @throws HttpRequestException
      */
-    @SuppressWarnings({"FinallyDiscardsException", "ThrowFromFinallyBlock"})
-    public HttpResponse postFiles(String path, ParameterMap params, UploadFile... uploadFiles) throws HttpRequestException {
+    @SuppressWarnings({ "finally" })
+	public HttpResponse postFiles(String path, ParameterMap params, UploadFile... uploadFiles) throws HttpRequestException {
         HttpResponse httpResponse = null;
         HttpURLConnection uc = null;
         try {
@@ -380,7 +381,8 @@ public abstract class AbstractHttpClient {
      * @return An open connection (or null)
      * @throws IOException
      */
-    protected HttpURLConnection openConnection(String path) throws IOException {
+    @SuppressWarnings("unused")
+	protected HttpURLConnection openConnection(String path) throws IOException {
         String requestUrl = baseUrl + path;
         try {
             URL url = new URL(requestUrl);

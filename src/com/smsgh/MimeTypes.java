@@ -7,6 +7,7 @@ import java.util.HashMap;
  * Map file extensions to MIME types. Based on the Apache mime.types file.
  * http://www.iana.org/assignments/media-types/
  */
+@SuppressWarnings("serial")
 public class MimeTypes {
 
     public static final String MIME_APPLICATION_ANDREW_INSET = "application/andrew-inset";

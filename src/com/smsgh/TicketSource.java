@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.smsgh.sdk.wrapper;
+package com.smsgh;
 
 /**
  * @author Administrator
