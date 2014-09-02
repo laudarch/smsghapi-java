@@ -52,23 +52,10 @@ To send a message just copy this code snippet and do the necessary modifications
      */
     public class Demo {
 
-        static String hostname = "api.smsgh.com";
-        static String contextPath = "v3";
-        static int timeout = 0;
-        static int port = -1;
-
         public static void main(String[] args) {
 
             BasicAuth auth = new BasicAuth("user233", "password23");
-            ApiHost host = new ApiHost();
-            host.setAuthorization(auth);
-            host.setHostname(hostname);
-            host.setContextPath(contextPath);
-            host.setPort(port);
-            host.setTimeout(timeout);
-            host.setSecuredConnection(false);
-            host.setConsoleLogEnabled(true);
-
+            ApiHost host = new ApiHost(auth);
             // Instance of the Messaging API
             MessagingApi messagingApi = new MessagingApi(host);
 
@@ -100,17 +87,10 @@ To schedule a message just copy this code snippet and do the necessary modificat
      */
     public class Demo {
 
-        static String hostname = "api.smsgh.com";
-        static String contextPath = "v3";
-
         public static void main(String[] args) {
 
             BasicAuth auth = new BasicAuth("user233", "password23");
-            ApiHost host = new ApiHost();
-            host.setAuthorization(auth);
-            host.setHostname(hostname);
-            host.setContextPath(contextPath);
-            host.setConsoleLogEnabled(true);
+            ApiHost host = new ApiHost(auth);
 
             // Instance of the Messaging API
             MessagingApi messagingApi = new MessagingApi(host);
@@ -155,17 +135,10 @@ To send a message just copy this code snippet and do the necessary modifications
      */
     public class Demo {
 
-        static String hostname = "api.smsgh.com";
-        static String contextPath = "v3";
-
         public static void main(String[] args) {
 
             BasicAuth auth = new BasicAuth("user233", "password23");
-            ApiHost host = new ApiHost();
-            host.setAuthorization(auth);
-            host.setHostname(hostname);
-            host.setContextPath(contextPath);
-            host.setConsoleLogEnabled(true);
+            ApiHost host = new ApiHost(auth);
 
             // Instance of the Messaging API
             AccountApi accountApi = new AccountApi(host);
