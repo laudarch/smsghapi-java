@@ -13,18 +13,10 @@ import java.util.Calendar;
  */
 public class Demo {
 
-    static String hostname = "api.smsgh.com";
-    static String contextPath = "v3";
-
     public static void main(String[] args) throws Exception {
 
         BasicAuth auth = new BasicAuth("user123", "password123");
-        ApiHost host = new ApiHost();
-        host.setAuthorization(auth);
-        host.setHostname(hostname);
-        host.setContextPath(contextPath);
-        host.setSecuredConnection(false);
-        host.setConsoleLogEnabled(true);
+        ApiHost host = new ApiHost(auth);
 
         // Instance of the Messaging API
         MessagingApi messagingApi = new MessagingApi(host);

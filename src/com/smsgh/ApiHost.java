@@ -21,14 +21,20 @@ public class ApiHost {
      *
      */
     public ApiHost() {
-        this.hostname = "";
+        this.hostname = "api.smsgh.com";
         this.iAuth = null;
         this.consoleLogEnabled = false;
-        this.contextPath = "";
+        this.contextPath = "v3";
         this.port = -1;
-        this.timeout = 0;
+        this.timeout = 5000;
         this.securedConnection = false;
     }
+
+
+    public ApiHost(IAuth iauth) {
+        this();
+        this.iAuth = iauth;
+    }    
 
     /**
      * @return the authorization
