@@ -29,6 +29,7 @@ public class Message {
     private String udh;
     private double units;
     private Date updateTime;
+    private String billingInfo;
 
     /**
      * Initializes a new instance of this class.
@@ -94,6 +95,9 @@ public class Message {
                 case "updatetime":
                     this.updateTime = val.asDate();
                     break;
+                case "billinginfo":
+                	this.billingInfo = val.asString();
+                	break;
             }
         }
     }
@@ -345,6 +349,19 @@ public class Message {
      * toJson
      */
     public String toJson() {
-        return new JsonObject().add("Type", this.type).add("ClientReference", this.clientReference).add("Content", this.content).add("FlashMessage", this.flashMessage).add("From", this.from).add("RegisteredDelivery", this.registeredDelivery).add("Time", this.time).add("To", this.to).add("Udh", this.udh).toString();
+        return new JsonObject().add("Type", this.type).add("ClientReference", this.clientReference)
+        		.add("Content", this.content).add("FlashMessage", this.flashMessage).add("From", this.from)
+        		.add("RegisteredDelivery", this.registeredDelivery).add("Time", this.time).add("To", this.to)
+        		.add("BillingInfo", this.billingInfo)
+        		.add("Udh", this.udh).toString();
     }
+
+	public String getBillingInfo() {
+		return billingInfo;
+	}
+
+	public Message setBillingInfo(String billingInfo) {
+		this.billingInfo = billingInfo;
+		return this;
+	}
 }

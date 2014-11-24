@@ -60,7 +60,7 @@ To send a message just copy this code snippet and do the necessary modifications
             MessagingApi messagingApi = new MessagingApi(host);
 
             try {
-                MessageResponse response = messagingApi.sendQuickMessage("+233245657867", "+233245098456", "Hello THe JAVA SDK R2 Test is ongoing... ");
+                MessageResponse response = messagingApi.sendQuickMessage("+233245657867", "+233245098456", "Hello THe JAVA SDK R2 Test is ongoing... ", "123");
 
                 System.out.println("Server Response Status " + response.getStatus());
             } catch (HttpRequestException ex) {
@@ -102,6 +102,7 @@ To schedule a message just copy this code snippet and do the necessary modificat
                 message.setFrom("Arsene");
                 message.setTo("+233247063817");
                 message.setRegisteredDelivery(true);
+                message.setBillingInfo("123");
 
                 Calendar cal = Calendar.getInstance();
                 cal.add(Calendar.DAY_OF_WEEK, 1);
