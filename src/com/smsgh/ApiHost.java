@@ -25,16 +25,28 @@ public class ApiHost {
         this.iAuth = null;
         this.consoleLogEnabled = false;
         this.contextPath = "v3";
-        this.port = -1;
+        this.port = 80;
         this.timeout = 5000;
         this.securedConnection = false;
     }
 
-
     public ApiHost(IAuth iauth) {
         this();
         this.iAuth = iauth;
-    }    
+    }
+    public ApiHost(IAuth iauth,String hostname, String contexPath) {
+        this();
+        this.iAuth = iauth;
+        this.hostname= hostname;
+        this.contextPath = contexPath;
+    }
+    
+    public ApiHost(IAuth iauth,String contexPath) {
+        this();
+        this.iAuth = iauth;
+        this.contextPath = contexPath;
+        this.timeout=0;
+    }
 
     /**
      * @return the authorization

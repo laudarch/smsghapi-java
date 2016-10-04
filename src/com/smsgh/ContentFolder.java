@@ -22,6 +22,8 @@ public class ContentFolder {
     private long contentMediaCount;
     private List<ContentFolder> folders;
     private List<ContentMedia> medias;
+    private String callbackUrl;
+
     public ContentFolder() {
     }
 

@@ -47,7 +47,7 @@ public class HttpResponse {
 
     public String getBodyAsString() {
         if (body != null) {
-            return new String(body);
+            return new String(body).replace("\0\0", ":::").replace("\0", "").replace(":::", " ");
         }
         return null;
     }
