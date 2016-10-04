@@ -12,9 +12,6 @@ public class BrokerDemo {
 
     static String hostname = "api.smsgh.com"; //api url
     static String contextPath = "usp/test/"; //Change to fit test or lvie
-//    static String apiToken = "token";// Token
-//    static String clientId = "clientId"; //clientId for smsgh api
-//    static String clientSecret = "clientSecret";//client secret for smsgh api
     
      static String apiToken = "token";// Token
     static String clientId = "ClientId"; //clientId for smsgh api
@@ -30,11 +27,9 @@ public class BrokerDemo {
 
         try {
             //Example buy airtime
-            BrokerResponse response = brokerClient.payMtnPostpaid("0244126631",  3.4, "");
-            // BrokerResponse response = brokerClient.buyBusyBundle("0244126631", "701", 3, "");
-            // BrokerResponse response = brokerClient.buySurflineBundle("0244123341", "5gbolddata",75, "");
-            //BrokerResponse response = brokerClient.payDstvRegularBill("0244126631", 3.4, "");
-            System.out.println(String.format("isSuccessful : %s", response.isSuccessful()));
+      
+             BrokerResponse response = brokerClient.buyBusyBundle("0244126631", "701", 3, "");
+         System.out.println(String.format("isSuccessful : %s", response.isSuccessful()));
             if (response.isSuccessful()) {
                 System.out.println(String.format("ProviderId : %s\nStatus\t:%s", response.getProviderId(), "Successful"));
             } else {
