@@ -16,9 +16,9 @@ public class BrokerDemo {
 //    static String clientId = "clientId"; //clientId for smsgh api
 //    static String clientSecret = "clientSecret";//client secret for smsgh api
     
-     static String apiToken = "758a9a52-b641-45b6-853f-b79942b5ba35";// Token
-    static String clientId = "ucxapzmz"; //clientId for smsgh api
-    static String clientSecret = "frzvvvgb";//client secret for smsgh api
+     static String apiToken = "token";// Token
+    static String clientId = "ClientId"; //clientId for smsgh api
+    static String clientSecret = "ClientSecrete";//client secret for smsgh api
 
 
     public static void main(String[] args) {
